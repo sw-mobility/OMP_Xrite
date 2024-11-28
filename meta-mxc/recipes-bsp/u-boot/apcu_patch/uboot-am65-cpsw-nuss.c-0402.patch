@@ -1,0 +1,20 @@
+--- a/drivers/net/ti/am65-cpsw-nuss.c	2024-03-22 06:31:03.829306500 +0900
++++ b/drivers/net/ti/am65-cpsw-nuss.c	2024-03-19 15:06:50.120385800 +0900
+@@ -243,6 +243,8 @@
+ 	ofnode node;
+ 	int ret;
+ 
++	printf("[%s][%s,%d] fdt blob: %p\n", __FILE__, __func__, __LINE__, 
++			ofnode_to_fdt(dev_ofnode(dev)));
+ 	ret = ofnode_read_u32(dev_ofnode(dev), "phys", &phandle);
+ 	if (ret)
+ 		return ret;
+@@ -700,7 +702,7 @@
+ 	}
+ 	phydev->advertising = phydev->supported;
+ 
+-	if (ofnode_valid(priv->phy_node))
++	if (priv->has_phy && ofnode_valid(priv->phy_node))
+ 		phydev->node = priv->phy_node;
+ 
+ 	priv->phydev = phydev;
