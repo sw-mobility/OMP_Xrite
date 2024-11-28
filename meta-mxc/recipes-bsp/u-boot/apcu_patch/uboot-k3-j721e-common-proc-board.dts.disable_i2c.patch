@@ -1,0 +1,50 @@
+--- a/arch/arm/dts/k3-j721e-common-proc-board.dts	2024-10-29 14:24:59.509121500 +0900
++++ b/arch/arm/dts/k3-j721e-common-proc-board.dts	2024-10-29 15:33:50.436105752 +0900
+@@ -473,15 +473,17 @@
+ };
+ 
+ &main_i2c0 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&main_i2c0_pins_default>;
+-	clock-frequency = <400000>;
++	status = "disabled";
++	// pinctrl-names = "default";
++	// pinctrl-0 = <&main_i2c0_pins_default>;
++	// clock-frequency = <400000>;
+ };
+ 
+ &main_i2c1 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&main_i2c1_pins_default>;
+-	clock-frequency = <400000>;
++	status = "disabled";
++	// pinctrl-names = "default";
++	// pinctrl-0 = <&main_i2c1_pins_default>;
++	// clock-frequency = <400000>;
+ };
+ 
+ &k3_clks {
+@@ -491,15 +493,17 @@
+ };
+ 
+ &main_i2c3 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&main_i2c3_pins_default>;
+-	clock-frequency = <400000>;
++	status = "disabled";
++	// pinctrl-names = "default";
++	// pinctrl-0 = <&main_i2c3_pins_default>;
++	// clock-frequency = <400000>;
+ };
+ 
+ &main_i2c6 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&main_i2c6_pins_default>;
+-	clock-frequency = <400000>;
++	status = "disabled";
++	// pinctrl-names = "default";
++	// pinctrl-0 = <&main_i2c6_pins_default>;
++	// clock-frequency = <400000>;
+ };
+ 
+ &mcu_cpsw {

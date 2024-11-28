@@ -1,0 +1,25 @@
+--- a/arch/arm/dts/k3-j721e-common-proc-board.dts	2024-10-29 15:42:36.389971700 +0900
++++ b/arch/arm/dts/k3-j721e-common-proc-board.dts	2024-10-30 10:51:38.251999799 +0900
+@@ -209,6 +209,7 @@
+ 		pinctrl-single,pins = <
+ 			J721E_WKUP_IOPAD(0xd0, PIN_INPUT, 7) /* (C14) WKUP_GPIO0_8 */
+ 			J721E_WKUP_IOPAD(0x50, PIN_OUTPUT, 7) /* (C22) WKUP_GPIO0_36 */ 
++			J721E_WKUP_IOPAD(0xC8, PIN_OUTPUT, 7) /* (F29) WKUP_GPIO0_6 */ 
+ 		>;
+ 	};
+ 
+@@ -394,6 +395,14 @@
+ 		output-low;
+ 		line-name = "FAN1_THERM_N";
+ 	};
++	// TC397_AP1_GPIO_TEST3
++	mcu_ap1_gpio_test3 {
++		/* F29 - WKUP_GPIO0_6 */
++		gpio-hog;
++		gpios = <6 GPIO_ACTIVE_HIGH>;
++		output-high;
++		line-name = "GPIO_TEST3";
++	};
+ };
+ 
+ &ospi1 {
