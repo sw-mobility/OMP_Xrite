@@ -1,0 +1,13 @@
+--- a/arch/arm/dts/k3-j721e-binman.dtsi	2024-03-26 18:18:27.470239900 +0900
++++ b/arch/arm/dts/k3-j721e-binman.dtsi	2024-03-21 10:14:03.115588200 +0900
+@@ -302,6 +302,10 @@
+ #define SPL_J721E_SK_DTB "spl/dts/k3-j721e-sk.dtb"
+ 
+ #define UBOOT_NODTB "u-boot-nodtb.bin"
++/*
++#define J721E_EVM_DTB "arch/arm/dts/k3-j721e-common-proc-board.dtb"
++#define J721E_SK_DTB "u-boot.dtb"
++*/
+ #define J721E_EVM_DTB "u-boot.dtb"
+ #define J721E_SK_DTB "arch/arm/dts/k3-j721e-sk.dtb"
+ 
