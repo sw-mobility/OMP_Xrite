@@ -1,7 +1,14 @@
 FILESEXTRAPATHS:prepend := ":${THISDIR}/apcu_patch:"
 
 SRC_URI += " \
+    file://uboot-am65-cpsw-nuss.c-0402.patch \
+	file://uboot-j721e_evm_a72_defconfig-0718.patch \
+	file://uboot-k3-j721e-binman.dtsi-0402.patch \
+	file://uboot-k3-j721e-common-proc-board-u-boot.dtsi-0402.patch \
+	file://uboot-k3-j721e-common-proc-board.dts-0417.patch \
 	file://uboot-k3-j721e-ddr-evm-lp4-4266.dtsi.patch \
+    file://uboot-k3-j721e-common-proc-board.dts.disable_i2c.patch \
+    file://uboot-k3-j721e-common-proc-board.dts.mcu_gpio.patch \
 "
 PR:append = "_tisdk_0"
 
