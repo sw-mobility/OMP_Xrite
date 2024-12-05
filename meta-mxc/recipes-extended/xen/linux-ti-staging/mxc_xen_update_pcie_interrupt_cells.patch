@@ -1,0 +1,29 @@
+--- git/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi_orig	2024-05-13 18:35:31.871569642 +0900
++++ git/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi	2024-05-13 18:35:55.071587824 +0900
+@@ -866,7 +866,7 @@
+ 
+ 		pcie1_intc: interrupt-controller {
+ 			interrupt-controller;
+-			#interrupt-cells = <2>;
++			#interrupt-cells = <1>;
+ 			interrupt-parent = <&gic500>;
+ 			interrupts = <GIC_SPI 324 IRQ_TYPE_EDGE_RISING>;
+ 		};
+@@ -908,7 +908,7 @@
+ 
+ 		pcie2_intc: interrupt-controller {
+ 			interrupt-controller;
+-			#interrupt-cells = <2>;
++			#interrupt-cells = <1>;
+ 			interrupt-parent = <&gic500>;
+ 			interrupts = <GIC_SPI 336 IRQ_TYPE_EDGE_RISING>;
+ 		};
+@@ -950,7 +950,7 @@
+ 
+ 		pcie3_intc: interrupt-controller {
+ 			interrupt-controller;
+-			#interrupt-cells = <2>;
++			#interrupt-cells = <1>;
+ 			interrupt-parent = <&gic500>;
+ 			interrupts = <GIC_SPI 348 IRQ_TYPE_EDGE_RISING>;
+ 		};

@@ -1,0 +1,11 @@
+--- git/configs/j721e_evm_a72_defconfig_orig	2024-07-18 11:56:15.280372167 +0900
++++ git/configs/j721e_evm_a72_defconfig	2024-07-18 11:56:31.552566150 +0900
+@@ -31,7 +31,7 @@
+ CONFIG_SPL_LOAD_FIT_ADDRESS=0x81000000
+ CONFIG_OF_BOARD_SETUP=y
+ CONFIG_DISTRO_DEFAULTS=y
+-CONFIG_BOOTCOMMAND="gpio read bootpin gpio@600000_68; if test ${bootpin} -eq 1; then setenv loadpart 1:1; setenv bootpart 1:2; setenv bootpath /${name_fit}; else; setenv loadpart 0:1; setenv bootpart 0:1; setenv bootpath /boot/${name_fit}; fi; run findfdt; run init_${boot}; load mmc ${loadpart} ${addr_fit} ${bootpath}; run run_fit;"
++CONFIG_BOOTCOMMAND="gpio read bootpin gpio@600000_68; if test ${bootpin} -eq 1; then setenv bootpart 1:1; run findfdt; run init_${boot}; load mmc ${bootpart} ${addr_fit} /boot.fit; bootm ${addr_fit}#config; else; setenv bootpart 0:1; run findfdt; run init_${boot}; load mmc ${bootpart} ${addr_fit} /boot/boot.fit; imxtract $addr_fit host_fdt 86e00000;imxtract $addr_fit host_kernel 86c00000; imxtract $addr_fit dom0_linux 85600000; fdt addr 86e00000; fdt resize 1024; fdt rm /chosen xen,dom0-bootargs; fdt set /chosen xen,dom0-bootargs \"console=ttyS2,115200 earlycon=xen earlyprintk=xen root=/dev/mmcblk0p1 rootwait rw clk_ignore_unused\"; booti 86c00000 - 86e00000;fi;"
+ CONFIG_LOGLEVEL=7
+ CONFIG_SPL_MAX_SIZE=0xc0000
+ CONFIG_SPL_HAS_BSS_LINKER_SECTION=y
