@@ -1,0 +1,10 @@
+[Match]
+Name=eth0
+ 
+[Network]
+IPForward=ipv4
+# Address=172.20.117.103/24
+# Gateway=172.20.117.11
+DNS=191.1.10.100
+
+Address=169.254.169.185
