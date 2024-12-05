@@ -1,0 +1,11 @@
+[Unit]
+Description=CAN2Eth Message Distributer to VMs
+After=xendomains.service
+
+[Service]
+RemainAfterExit=true
+WorkingDirectory=/usr/local
+ExecStart=/usr/bin/python3 can2eth_packet_forward.py
+
+[Install]
+WantedBy=multi-user.target
