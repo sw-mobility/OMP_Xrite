@@ -1,0 +1,16 @@
+--- git/scripts/uboot-script-gen_back	2024-04-30 17:15:59.436384073 +0900
++++ git/scripts/uboot-script-gen	2024-04-30 17:16:45.836485863 +0900
+@@ -1310,12 +1310,7 @@
+ 
+ fit_addr="$(printf "0x%x" $memaddr)"
+ 
+-if test "$FIT"
+-then
+-    memaddr=$(( $MEMORY_END - 2 * ( $memaddr + $offset ) ))
+-else
+-    memaddr=$(( $MEMORY_END - $memaddr - $offset ))
+-fi
++memaddr=$(( $MEMORY_END - $memaddr - $offset ))
+ if test $memaddr -lt 0
+ then
+     echo Error, not enough memory to load all binaries

@@ -1,0 +1,29 @@
+--- git/scripts/uboot-script-gen_orig	2024-05-07 16:56:45.716712449 +0900
++++ git/scripts/uboot-script-gen	2024-05-07 17:05:34.589483757 +0900
+@@ -987,6 +987,7 @@
+             $ramdisk_line
+             $fpga_line
+             $loadables_line
++            $fit_signature
+         };
+     };
+ 	EOF
+@@ -1159,7 +1160,8 @@
+     exit 1
+ fi
+ 
+-fit_algo=$'hash {\n                algo = "md5";\n            };'
++fit_algo=$'hash {\n                algo = "sha512";\n            };'
++fit_signature=''
+ if test "$FIT_ENC_KEY_DIR" || test "$FIT_ENC_UB_DTB"
+ then
+     if ! test "$FIT_ENC_KEY_DIR" && test "$FIT_ENC_UB_DTB"
+@@ -1176,7 +1178,7 @@
+     then
+         fit_enc_opt+=" -K $FIT_ENC_UB_DTB"
+     fi
+-    fit_algo=$'signature {\n                algo = \"sha1,rsa2048\";\n                key-name-hint = \"'"$key_hint"$'\";\n};'
++    fit_signature=$'signature {\n                algo = \"sha512,rsa4096\";\n                key-name-hint = \"'"$key_hint"$'\";\n                padding = \"pkcs-1.5\";\n                sign-images = \"kernel\", \"fdt\";\n            };'
+ fi
+ 
+ # the cd is needed so that the relative paths will match once we use
