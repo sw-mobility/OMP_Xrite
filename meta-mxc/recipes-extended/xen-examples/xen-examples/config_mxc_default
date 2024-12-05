@@ -1,0 +1,15 @@
+# Copyright 2024 HL Mando
+
+MEMORY_START="0x85200000"
+MEMORY_END="0xFFFFFFFF"
+
+XEN="xen"
+XEN_CMD="dom0_mem=1G dom0_max_vcpus=1 bootscrub=0"
+DOM0_KERNEL="Image"
+DOM0_CMD="console=ttyS2,115200 earlycon=xen earlyprintk=xen root=/dev/mmcblk1p2 rootwait rw clk_ignore_unused"
+
+NUM_DOMUS=0
+
+UBOOT_SOURCE="boot.source"
+UBOOT_SCRIPT="boot.scr"
+BOOT_CMD="none"
