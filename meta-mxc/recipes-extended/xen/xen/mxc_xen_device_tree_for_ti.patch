@@ -1,0 +1,80 @@
+--- git/xen/common/device_tree.c.org	2024-05-29 11:59:50.555526763 +0900
++++ git/xen/common/device_tree.c	2024-06-28 11:13:00.066458405 +0900
+@@ -1105,8 +1105,23 @@
+ 
+     /* Get the interrupts property */
+     intspec = dt_get_property(device, "interrupts", &intlen);
+-    if ( intspec == NULL )
+-        return 0;
++    if ( intspec == NULL ) {
++		int i, retintnum = 0;
++		intspec = dt_get_property(device, "ti,interrupt-ranges", &intlen);
++		if(intspec == NULL) {
++			return 0;
++		}
++		intlen /= sizeof(*intspec);
++		dt_dprintk(" using 'ti,interrupt-ranges' property\n");
++
++		for( i = 2 ; i < intlen; i+=3){
++			retintnum += be32_to_cpup(&intspec[i]);
++		}
++		dt_dprintk(" intspec=%d intlen=%d\n", be32_to_cpup(intspec), retintnum);
++
++		return retintnum;
++	}
++
+     intlen /= sizeof(*intspec);
+ 
+     dt_dprintk(" using 'interrupts' property\n");
+@@ -1560,8 +1575,49 @@
+ 
+     /* Get the interrupts property */
+     intspec = dt_get_property(device, "interrupts", &intlen);
+-    if ( intspec == NULL )
+-        return -EINVAL;
++	if ( intspec == NULL ){
++		int i = 0, newidx = 0, curmax = 0, triggertype = 4;
++		u32 typelen;
++
++		intspec = dt_get_property(device, "ti,interrupt-ranges", &intlen);
++		if(intspec == NULL) {
++			return -EINVAL;
++		}
++		intlen /= sizeof(*intspec);
++		dt_dprintk(" using 'ti,interrupt-ranges' property\n");
++		dt_dprintk(" intspec=%d intlen=%d\n", be32_to_cpup(intspec), intlen);
++
++		p = dt_irq_find_parent(device);
++		if ( p == NULL )
++			return -EINVAL;
++
++		i = 0;
++		newidx = index;
++		curmax = be32_to_cpup(&intspec[i + 2]);
++		while(newidx >= curmax){
++			newidx -= curmax;
++
++			i += 3;
++			curmax = be32_to_cpup(&intspec[i + 2]);
++		}
++
++		tmp = dt_get_property(device, "ti,intr-trigger-type", &typelen);
++		if(tmp != NULL) {
++			dt_dprintk(" using 'ti,intr-trigger-type' property\n");
++			dt_dprintk(" tmp=%d typelen=%d\n", be32_to_cpup(tmp), typelen);
++
++			triggertype = be32_to_cpup(tmp);
++		}
++
++		out_irq->specifier[0] = 0;
++		out_irq->specifier[1] = be32_to_cpup(&intspec[i + 1]) + newidx - 32;
++		out_irq->specifier[2] = triggertype;
++		out_irq->size = 3;
++		out_irq->controller = p;
++
++		return 0;
++	}
++
+     intlen /= sizeof(*intspec);
+ 
+     dt_dprintk(" using 'interrupts' property\n");

@@ -1,0 +1,28 @@
+--- git/xen/arch/arm/Kconfig.debug_orig	2024-05-08 10:01:01.892746839 +0900
++++ git/xen/arch/arm/Kconfig.debug	2024-05-08 10:07:57.484734584 +0900
+@@ -129,6 +129,9 @@
+ 	config EARLY_PRINTK_DRA7
+ 		bool "Early printk with 8250 on DRA7 platform"
+ 		select EARLY_UART_8250
++	config EARLY_PRINTK_J721E
++		bool "Early printk with 8250 on J721E platform"
++		select EARLY_UART_8250
+ 	config EARLY_PRINTK_EXYNOS5250
+ 		bool "Early printk with the second UART on Exynos5250"
+ 		select EARLY_UART_EXYNOS4210
+@@ -221,6 +224,7 @@
+ 	range 0x0 0xffffffff if ARM_32
+ 	default 0xF040AB00 if EARLY_PRINTK_BRCM
+ 	default 0x4806A000 if EARLY_PRINTK_DRA7
++	default 0x02800000 if EARLY_PRINTK_J721E
+ 	default 0x1c090000 if EARLY_PRINTK_FASTMODEL
+ 	default 0x12c20000 if EARLY_PRINTK_EXYNOS5250
+ 	default 0xfff32000 if EARLY_PRINTK_HIKEY960
+@@ -269,6 +273,7 @@
+ 
+ 	default 2 if EARLY_PRINTK_BRCM
+ 	default 2 if EARLY_PRINTK_DRA7
++	default 2 if EARLY_PRINTK_J721E
+ 	default 2 if EARLY_PRINTK_OMAP5432
+ 	default 2 if EARLY_PRINTK_SUN6I
+ 	default 2 if EARLY_PRINTK_SUN7I
