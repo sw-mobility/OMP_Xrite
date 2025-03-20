@@ -26,6 +26,8 @@ guests = []
 def updateGuestList():
     global guests
     guests = os.popen("arp -n -i " + args.interface + " | sed '1d' | awk -F ' ' '{print $1}'").read()[:-1].split('\n')
+    if guests[0] == '':
+        guests = []
     threading.Timer(10, updateGuestList).start()
     guests.append("")
 
