@@ -1,0 +1,42 @@
+--- a/arch/arm/dts/k3-j721e-common-proc-board-u-boot.dtsi	2024-12-03 16:46:23.864180800 +0900
++++ b/arch/arm/dts/k3-j721e-common-proc-board-u-boot.dtsi	2024-12-09 12:10:30.175771434 +0900
+@@ -66,7 +66,8 @@
+ };
+ 
+ &main_pmx0 {
+-	bootph-all;
++	// bootph-all;
++	bootph-pre-ram;
+ };
+ 
+ &main_uart0 {
+@@ -145,13 +146,13 @@
+ 		bootph-all;
+ 	};
+ };
+-
++/*
+ &serdes0_pcie_link {
+ 	assigned-clocks = <&serdes0 CDNS_SIERRA_PLL_CMNLC>;
+ 	assigned-clock-parents = <&wiz0_pll1_refclk>;
+ 	bootph-all;
+ };
+-
++*/
+ &main_usbss0_pins_default {
+ 	bootph-all;
+ };
+@@ -194,11 +195,11 @@
+ &main_esm {
+ 	bootph-all;
+ };
+-
++/*
+ &exp2 {
+ 	bootph-all;
+ };
+-
++*/
+ &mcu_fss0_ospi0_pins_default {
+ 	bootph-all;
+ };

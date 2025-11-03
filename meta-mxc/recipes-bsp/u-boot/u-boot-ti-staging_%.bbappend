@@ -1,18 +1,28 @@
 FILESEXTRAPATHS:prepend := ":${THISDIR}/apcu_patch:"
 
 SRC_URI += " \
-    file://uboot-am65-cpsw-nuss.c-0402.patch \
-	file://uboot-j721e_evm_a72_defconfig-0718.patch \
-	file://uboot-k3-j721e-binman.dtsi-0402.patch \
-	file://uboot-k3-j721e-common-proc-board-u-boot.dtsi-0402.patch \
-	file://uboot-k3-j721e-common-proc-board.dts-0417.patch \
-	file://uboot-k3-j721e-ddr-evm-lp4-4266.dtsi.patch \
-    file://uboot-k3-j721e-common-proc-board.dts.disable_i2c.patch \
-    file://uboot-k3-j721e-common-proc-board.dts.mcu_gpio.patch \
+    file://uboot-k3-j721e-common-proc-board-u-boot.dtsi.patch \
+    file://uboot-k3-j721e-common-proc-board.dts.patch \
+    file://uboot-k3-j721e-ddr-evm-lp4-4266.dtsi.patch \
 "
+
+IS_XEN  = "${@bb.utils.contains('DISTRO_FEATURES','xen','1','0',d)}"
+
+do_configure:prepend() {
+    bbnote "IS_XEN=${IS_XEN}"
+}
+
+DEFAULT_UBOOT_CFG = "file://uboot-j721e_evm_a72_defconfig-default.patch"
+XEN_ONLY_UBOOT_CFG = "file://uboot-j721e_evm_a72_defconfig-xen_only.patch"
+
+UBOOT_CFG_SELECTED = "${@( \
+    d.getVar('XEN_ONLY_UBOOT_CFG')  if (d.getVar('IS_XEN')=='1') else \
+    d.getVar('DEFAULT_UBOOT_CFG') \
+)}"
+
+SRC_URI:append = " ${UBOOT_CFG_SELECTED}"
+
 PR:append = "_tisdk_0"
-
-
 
 do_deploy:append:k3r5 () {
     for f in ${B}/tiboot3-*.bin; do
