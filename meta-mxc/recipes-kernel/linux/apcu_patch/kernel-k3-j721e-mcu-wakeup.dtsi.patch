@@ -1,0 +1,12 @@
+--- arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi	2025-02-04 11:00:19.026689458 +0900
++++ arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi	2025-02-04 11:00:38.879147279 +0900
+@@ -388,7 +388,8 @@
+ 			power-domains = <&k3_pds 103 TI_SCI_PD_EXCLUSIVE>;
+ 			#address-cells = <1>;
+ 			#size-cells = <0>;
+-			status = "disabled";
++			// status = "disabled";
++			status = "okay";
+ 		};
+ 
+ 		ospi1: spi@47050000 {
