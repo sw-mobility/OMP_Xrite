@@ -15,9 +15,16 @@ BOOT_PACKAGES = " \
 	pv \
 "
 
+FOTA_PACKAGES = " \
+    btrfs-tools \
+    zstd \
+    parted \
+    u-boot-tools \
+    libubootenv \
+"
 RDEPENDS:${PN} += "\
     ${BOOT_PACKAGES} \
+    ${FOTA_PACKAGES} \
 "
 
-# RDEPENDS:${PN}:append:k3 = " ${OPTEE_PKGS}"
 ERROR_QA:remove = "version-going-backwards"

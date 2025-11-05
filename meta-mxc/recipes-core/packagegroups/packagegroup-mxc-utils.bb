@@ -10,8 +10,6 @@ UTIL_PACKAGES = " \
     glibc \
     curl \
     ti-rtos-firmware \
-    lapack \
-    openblas \
     zlib \
     openssl \
     openssl-bin \
@@ -23,9 +21,12 @@ UTIL_PACKAGES = " \
     gcc \
     mtd-utils \
     vlan \
-    speedtest-cli \
+    python3-speedtest-cli \
     netplan \
     net-tools \
+    tree \
+    linuxptp \
+    ${@bb.utils.contains('DISTRO_FEATURES', 'xen', '', 'systemd',d)} \
 "
 
 ADDITIONAL_PACKAGES = " \
@@ -54,5 +55,4 @@ RDEPENDS:${PN} += "\
     ${UTIL_PACKAGES} \
 "
 
-# RDEPENDS:${PN}:append:k3 = " ${OPTEE_PKGS}"
 ERROR_QA:remove = "version-going-backwards"

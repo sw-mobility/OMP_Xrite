@@ -8,14 +8,14 @@ inherit packagegroup
 
 RDEPENDS:${PN} = "\
     cmake \
-    neo-ai-treelite \
-    neo-ai-tvm \
     aws-iot-fleetwise-edge \
-    greengrass-bin \
     aws-cli \
     aws-sdk-cpp \
     aws-iot-device-sdk-python-v2 \
     aws-iot-device-sdk-cpp-v2 \
+    aws-crt-cpp \
+    aws-crt-python  \
+    greengrass-bin \
     corretto-11-bin \
     mtd-utils \
     bash \
@@ -25,13 +25,10 @@ RDEPENDS:${PN} = "\
 	dosfstools \
 	pv \
     docker \
-	docker-ce \
 	python3-docker \
 	grub \
 	btrfs-tools \
-	k3s \
     module-init-tools \
-    thermal-init \
     bash \
     vim \
     opkg-bash-completion \
@@ -42,6 +39,9 @@ RDEPENDS:${PN} = "\
     phytool \
     ca-certificates \
     boost \
+    numactl \
+    nodejs \
+    procps \
     iputils \
     curl \
     initscript-telnetd \
@@ -94,66 +94,23 @@ RDEPENDS:${PN} = "\
     ${@bb.utils.contains('MACHINE_FEATURES', 'pci', 'pciutils', '',d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'zeroconf', 'avahi-utils', '',d)} \
     ti-tidl \
+    ti-tidl-osrt \
     edgeai-dl-inferer-staticdev \
     edgeai-apps-utils-source \
     edgeai-tiovx-modules \
     edgeai-tiovx-kernels \
-    python3-boto3 \
-    python3-can \
-    python3-numpy \
-    python3-pandas \
-    python3-scikit-learn \
-    python3-scipy \
-    python3-cython \
-    python3-gast \
-    python3-pythran \
-    python3-scikit-build \
-    python3-joblib \
-    python3-modules \
-    torch \
-    torch-libgomp \
-    torchaudio \
-    torchvision \
-    opencv \
-    glibc \
-    curl \
-    ti-rtos-firmware \
-    lapack \
-    openblas \
-    zlib \
-    openssl \
-    openssl-bin \
-    openssl-conf \
-    openssl-engines \
-    can-utils \
-    flashrom \
-    file \
-    gcc \
-    mtd-utils \
-    vlan \
-    speedtest-cli \
-    netplan \
-    net-tools \
-    libgcc \
-    libgcc-dev \
-    libstdc++-dev \
-    libgomp-dev \
-    ${LIBC_DEPENDENCIES} \
-    libc-staticdev \
-    linux-libc-headers-dev \
-    curl-dev \
-    i2c-tools-dev \
-    lzo-dev \
-    opkg-dev \
-    readline-dev \
-    libusb-compat-dev \
-    libusb1-dev \
-    zlib-dev \
-    ncurses-dev \
-    opkg-dev \
-    util-linux-dev \
-    dosfstools \
     xen \
     xen-examples-default \
     xen-tools \
+    ament-cmake \
+    ament-cmake-ros \
 "
+
+
+# python3-scikit-learn
+# python3-scikit-build
+# python3-scipy
+# torch
+# torch-libgomp
+# torchaudio
+# torchvision

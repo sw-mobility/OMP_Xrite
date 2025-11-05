@@ -13,8 +13,6 @@ AWS_PACKAGES = " \
     aws-iot-device-sdk-cpp-v2 \
     aws-crt-cpp \
     aws-crt-python  \
-    neo-ai-treelite \
-    neo-ai-tvm \
     greengrass-bin \
     corretto-11-bin \
 "

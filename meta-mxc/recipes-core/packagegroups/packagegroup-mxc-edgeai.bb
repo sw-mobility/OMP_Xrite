@@ -7,6 +7,7 @@ inherit packagegroup
 
 MXC_EDGEAI_PACKAGES = " \
     ti-tidl \
+    ti-tidl-osrt \
     edgeai-dl-inferer-staticdev \
     edgeai-apps-utils-source \
     edgeai-tiovx-modules \
@@ -17,5 +18,4 @@ RDEPENDS:${PN} += "\
     ${MXC_EDGEAI_PACKAGES} \
 "
 
-# RDEPENDS:${PN}:append:k3 = " ${OPTEE_PKGS}"
 ERROR_QA:remove = "version-going-backwards"

@@ -7,16 +7,13 @@ inherit packagegroup
 
 MXC_DOCKER = "\
     docker \
-	docker-ce \
 	python3-docker \
 	grub \
-	btrfs-tools \
-	k3s \
 "
+
 # --- MXC_DEV_TOOLS_EXTRA ---
 MXC_DEV_TOOLS_BASE = " \
     module-init-tools \
-    thermal-init \
     bash \
     vim \
     opkg-bash-completion \
@@ -31,6 +28,8 @@ MXC_DEV_TOOLS_BASE = " \
     nodejs \
     procps \
 "
+# thermal-init
+
 
 MXC_DEV_TOOLS_NETWORK = " \
     iputils \

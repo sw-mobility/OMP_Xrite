@@ -11,23 +11,25 @@ PYTHON_PACKAGES = " \
     python3-cantools \
     python3-numpy \
     python3-pandas \
-    python3-scikit-learn \
-    python3-scipy \
     python3-cython \
     python3-gast \
     python3-pythran \
-    python3-scikit-build \
     python3-joblib \
     python3-modules \
+    python3-scikit-learn \
+    python3-scikit-build \
+    python3-scipy \
+    python3-pillow \
+    python3-sympy \
     torch \
     torch-libgomp \
     torchaudio \
     torchvision \
+    torchvision-sublib \
 "
 
 RDEPENDS:${PN} += "\
     ${PYTHON_PACKAGES} \
 "
 
-# RDEPENDS:${PN}:append:k3 = " ${OPTEE_PKGS}"
 ERROR_QA:remove = "version-going-backwards"
