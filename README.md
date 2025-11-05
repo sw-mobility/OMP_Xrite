@@ -9,7 +9,7 @@ $ mkdir tisdk
 $ cd tisdk
 $ git clone https://git.ti.com/git/arago-project/oe-layersetup.git yocto-build
 $ cd yocto-build
-$ ./oe-layertool-setup.sh -f configs/processor-sdk-linux/processor-sdk-linux-09_01_00_06.txt 
+$ ./oe-layertool-setup.sh -f configs/processor-sdk-linux/processor-sdk-linux-10_00_08_06.txt 
 ```
 
 
@@ -28,24 +28,14 @@ MACHINE="j721e-hs-evm"
 To download TI edge AI SDK, run:
 ```
 $ cd yocto-build/sources
-$ git clone https://git.ti.com/git/edgeai/meta-edgeai.git -b kirkstone
-$ cd meta-edgeai
-$ git reset --hard 02ce7e60b449c72def00f26afc549034cbd82ba9
+$ git clone https://git.ti.com/git/edgeai/meta-edgeai.git -b 10.01.00.06
 ```
 After download meta-edgeai, should be modify u-boot and kernel file: <br>
 TARGET FILE : meta-edgeai/recipes-bsp/u-boot/u-boot-ti-staging_%.bbappend <br>
-Erase below line in SRC_URI:append:j721e
-```
-file://0001-HACK-arm-k3-j721e-sk-RPi-header-pins-set-to-default-.patch
-```
+-> Erase or comment out all contents of the file.
 
-TARGET FILE : meta-edgeai/recipes-kernel/linux/rtos-mem-map.inc <br>
-Erase below line in top
-```
-FILESEXTRAPATHS:prepend := "${THISDIR}/linux-ti-staging/${MACHINE}:"
-```
-And then, add below line in top
-```
-FILESEXTRAPATHS:prepend := "${THISDIR}/linux-ti-staging/j721e-evm:"
-```
+TARGET FILE : meta-edgeai/recipes-kernel/linux/linux-ti-staging_%.bbappend <br>
+-> Erase or comment out all contents of the file.
 
+TARGET FILE : meta-edgeai/recipes-kernel/linux/linux-ti-staging-rt_%.bbappend <br>
+-> Erase or comment out all contents of the file.
