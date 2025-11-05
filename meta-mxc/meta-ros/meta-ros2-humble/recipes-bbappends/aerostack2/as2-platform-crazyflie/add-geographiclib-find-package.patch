@@ -1,0 +1,18 @@
+Add GeographicLib to project dependencies
+
+Upstream-Status: Pending
+
+Signed-off-by: Rob Woolley <rob.woolley@windriver.com>
+
+Index: git/CMakeLists.txt
+===================================================================
+--- git.orig/CMakeLists.txt
++++ git/CMakeLists.txt
+@@ -25,6 +25,7 @@ set(PROJECT_DEPENDENCIES
+   as2_msgs
+   geometry_msgs
+   Eigen3
++  GeographicLib
+ )
+ 
+ foreach(DEPENDENCY ${PROJECT_DEPENDENCIES})

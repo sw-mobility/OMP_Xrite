@@ -1,0 +1,1 @@
+SRC_URI:remove = "file://0001-Fix-build-with-boost-1.73.0.patch"

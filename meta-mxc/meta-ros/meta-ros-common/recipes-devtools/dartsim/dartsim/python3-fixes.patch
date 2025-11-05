@@ -1,0 +1,42 @@
+Replace outdated distuils.log with logging
+
+Upstream-Status: Pending
+
+Signed-off-by: Rob Woolley <rob.woolley@windriver.com>
+
+Index: git/python/dartpy/CMakeLists.txt
+===================================================================
+--- git.orig/python/dartpy/CMakeLists.txt
++++ git/python/dartpy/CMakeLists.txt
+@@ -23,8 +23,7 @@ if(NOT pybind11_FOUND)
+ endif()
+ 
+ execute_process(COMMAND ${PYTHON_EXECUTABLE} -c
+-  "from distutils.sysconfig import get_python_lib;\
+-  print(get_python_lib(plat_specific=True))"
++  "import sysconfig; print(sysconfig.get_path('platlib'))"
+   OUTPUT_VARIABLE PYTHON_SITE_PACKAGES
+   OUTPUT_STRIP_TRAILING_WHITESPACE
+ )
+Index: git/setup.py
+===================================================================
+--- git.orig/setup.py
++++ git/setup.py
+@@ -10,7 +10,7 @@ from codecs import open  # To use a cons
+ from setuptools import setup, Extension
+ from setuptools.command.build_ext import build_ext
+ from distutils.version import LooseVersion
+-import distutils.log
++import logging
+ 
+ # Get the current directory path.
+ dart_root = os.path.abspath(os.path.dirname(__file__))
+@@ -20,7 +20,7 @@ with open(os.path.join(dart_root, 'READM
+     long_description = f.read()
+ description = 'Python API of Dynamic Animation and Robotics Toolkit.'
+ 
+-distutils.log.set_verbosity(distutils.log.DEBUG)  # Set DEBUG level
++logging.basicConfig(level=logging.DEBUG) # Set DEBUG level
+ 
+ 
+ class CMakeExtension(Extension):

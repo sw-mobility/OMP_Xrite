@@ -1,0 +1,11 @@
+--- ../CMakeLists.txt	2025-03-06 11:43:31.732968397 +0900
++++ ../CMakeLists.txt	2025-03-06 13:46:30.270515256 +0900
+@@ -81,6 +81,8 @@
+       -Wall
+       -Wextra
+       -Wpedantic
++      -DHTTP_PROXY=http://172.20.117.95:3128
++      -DHTTPS_PROXY=http://172.20.117.95:3128
+   )
+ 
+   # The external project will install to the build folder, but we'll install that on make install.
