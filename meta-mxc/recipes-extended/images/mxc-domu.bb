@@ -1,4 +1,3 @@
-require recipes-core/images/mxc-core-packagegroups.bb
 require recipes-core/images/mxc-core-image.inc
 
 LICENSE = "CLOSED"
@@ -22,14 +21,16 @@ IMAGE_INSTALL:remove = " \
 		qemu \
 "
 
-IMAGE_INSTALL:append = " openssh-sftp openssh-sftp-server "
-
-IMAGE_INSTALL:append = " \
-	  mxc-core-packagegroups \
-	  aws-cli \
-	  aws-sdk-cpp \
-	  python3-joblib \
+IMAGE_INSTALL += " openssh-sftp \
+	openssh-sftp-server \
+	packagegroup-mxc-utils \
+	packagegroup-mxc-devtools \
+	packagegroup-mxc-boot \
+	base-files \
 "
+
+IMAGE_INSTALL:append = "${@bb.utils.contains('DISTRO_FEATURES', 'ros1', ' packagegroup-mxc-ros1 ', '', d)}"
+IMAGE_INSTALL:append = "${@bb.utils.contains('DISTRO_FEATURES', 'ros2', ' packagegroup-mxc-ros2 ', '', d)}"
 
 # Increase the freespace
 IMAGE_ROOTFS_EXTRA_SPACE ?= "54000"

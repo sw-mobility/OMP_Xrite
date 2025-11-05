@@ -7,8 +7,3 @@ IMAGE_INSTALL:remove = "docker"
 IMAGE_INSTALL:remove = "packagegroup-core-ssh-openssh"
 
 IMAGE_INSTALL += "zlib-dev xen-tools-xenstat xen-tools-xenmon"
-
-# IMAGE_INSTALL:remove = " \
-#     packagegroup-mxc-utils \
-#     packagegroup-mxc-python \
-# "

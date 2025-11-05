@@ -17,11 +17,11 @@ SRC_URI:append = "  \
 "
 
 do_deploy_netconfigs_dom0() {
-
+    install -d ${IMAGE_ROOTFS}${sysconfdir}/systemd/network
     install -m 0644 ${THISDIR}/${PN}/10-wired.network ${IMAGE_ROOTFS}${sysconfdir}/systemd/network/
-
+    
     if ${@bb.utils.contains('DISTRO_FEATURES','xen','true','false',d)}; then
-        install -d ${IMAGE_ROOTFS}${sysconfdir}/systemd/network
+        
         install -d ${IMAGE_ROOTFS}${sysconfdir}/iptables
 
         install -m 0644 ${THISDIR}/${PN}/iptables.rules ${IMAGE_ROOTFS}${sysconfdir}/iptables/
@@ -32,6 +32,7 @@ do_deploy_netconfigs_dom0() {
         install -m 0644 ${THISDIR}/${PN}/xenbr0.netdev ${IMAGE_ROOTFS}${sysconfdir}/systemd/network/
         install -m 0644 ${THISDIR}/${PN}/xenbr0.network ${IMAGE_ROOTFS}${sysconfdir}/systemd/network/
     fi
+
 }
 
 addtask deploy_netconfigs_dom0 after do_rootfs before do_image
