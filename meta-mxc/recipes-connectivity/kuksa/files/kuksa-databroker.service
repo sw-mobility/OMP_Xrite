@@ -1,0 +1,19 @@
+[Unit]
+Description=Kuksa Databroker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/kuksa/databroker.env
+
+ExecStart=/usr/bin/kuksa-databroker \
+  --address ${DB_ADDRESS} \
+  --port ${DB_PORT} \
+  --vss ${VSS_JSON} \
+  --insecure 
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
