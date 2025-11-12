@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <FILE-INFO-COMMENT>
+    <SDGS>
+      <SDG GID="xAAP">
+        <SD GID="GENERATED">TRUE</SD>
+        <SD GID="GENERATOR">Hadl2Arxml</SD>
+        <SD GID="SOURCE">ServiceInterface.hadl</SD>
+      </SDG>
+    </SDGS>
+  </FILE-INFO-COMMENT>
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>pst</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>com</SHORT-NAME>
+          <ELEMENTS>
+            <SERVICE-INTERFACE>
+              <SHORT-NAME>VehicleControlService</SHORT-NAME>
+              <NAMESPACES>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>pst_1</SHORT-NAME>
+                  <SYMBOL>pst</SYMBOL>
+                </SYMBOL-PROPS>
+                <SYMBOL-PROPS>
+                  <SHORT-NAME>com_2</SHORT-NAME>
+                  <SYMBOL>com</SYMBOL>
+                </SYMBOL-PROPS>
+              </NAMESPACES>
+              <EVENTS>
+                <VARIABLE-DATA-PROTOTYPE>
+                  <SHORT-NAME>VehicleSpeed</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/pst/com/VehicleSpd</TYPE-TREF>
+                </VARIABLE-DATA-PROTOTYPE>
+              </EVENTS>
+              <FIELDS>
+                <FIELD>
+                  <SHORT-NAME>ParkingBrakeStatus</SHORT-NAME>
+                  <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/pst/com/PrkBrkSta</TYPE-TREF>
+                  <HAS-GETTER>true</HAS-GETTER>
+                  <HAS-NOTIFIER>true</HAS-NOTIFIER>
+                  <HAS-SETTER>true</HAS-SETTER>
+                </FIELD>
+              </FIELDS>
+              <METHODS>
+                <CLIENT-SERVER-OPERATION>
+                  <SHORT-NAME>getEvDriveReadyStatus</SHORT-NAME>
+                  <ARGUMENTS>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>m_ev_drv_rdy_sta_req</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/pst/com/EvDrvRdySta_Req</TYPE-TREF>
+                      <DIRECTION>IN</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                    <ARGUMENT-DATA-PROTOTYPE>
+                      <SHORT-NAME>m_ev_drv_rdy_sta_resp</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/pst/com/EvDrvRdySta_Resp</TYPE-TREF>
+                      <DIRECTION>OUT</DIRECTION>
+                    </ARGUMENT-DATA-PROTOTYPE>
+                  </ARGUMENTS>
+                </CLIENT-SERVER-OPERATION>
+              </METHODS>
+            </SERVICE-INTERFACE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+              <SHORT-NAME>VehicleSpd</SHORT-NAME>
+              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+              <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+              <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/int16_t</TYPE-REFERENCE-REF>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+              <SHORT-NAME>EvDrvRdySta_Req</SHORT-NAME>
+              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+              <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+              <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-REFERENCE-REF>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+              <SHORT-NAME>EvDrvRdySta_Resp</SHORT-NAME>
+              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+              <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+              <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-REFERENCE-REF>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+              <SHORT-NAME>PrkBrkSta</SHORT-NAME>
+              <CATEGORY>TYPE_REFERENCE</CATEGORY>
+              <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+              <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-REFERENCE-REF>
+            </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+              <SHORT-NAME>Publisher_Component</SHORT-NAME>
+              <DESC>
+                <L-2 L="FOR-ALL">definition of software components in the application design</L-2>
+              </DESC>
+              <PORTS>
+                <P-PORT-PROTOTYPE>
+                  <SHORT-NAME>PPort</SHORT-NAME>
+                  <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/pst/com/VehicleControlService</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+            <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+              <SHORT-NAME>Subscriber_Component</SHORT-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>RPort</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/pst/com/VehicleControlService</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

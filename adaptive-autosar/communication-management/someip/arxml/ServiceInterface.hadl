@@ -1,0 +1,44 @@
+import AUTOSAR.StdTypes.int16_t
+import AUTOSAR.StdTypes.uint8_t
+
+package pst.com {
+
+    interface VehicleControlService namespace pst.com {
+        event VehicleSpeed of VehicleSpd
+        method getEvDriveReadyStatus (
+            in  m_ev_drv_rdy_sta_req  of EvDrvRdySta_Req,
+            out m_ev_drv_rdy_sta_resp of EvDrvRdySta_Resp )
+        field ParkingBrakeStatus of PrkBrkSta (get set notify)
+    }
+    
+    typedef VehicleSpd of int16_t
+    typedef EvDrvRdySta_Req of uint8_t
+    typedef EvDrvRdySta_Resp of uint8_t
+    typedef PrkBrkSta of uint8_t
+	
+/*
+    struct VehicleSpd {
+        speed of int16_t
+    }
+	
+    struct EvDrvRdySta_Req {
+        value of uint8_t
+    }
+
+    struct EvDrvRdySta_Resp {
+        status of uint8_t
+    }
+    
+    struct PrkBrkSta {
+        status of uint8_t
+    }
+*/
+	// definition of software components in the application design
+    component Publisher_Component {
+        provide PPort for VehicleControlService
+    }
+
+    component Subscriber_Component {
+        require RPort for VehicleControlService
+    }
+}
