@@ -9,6 +9,7 @@ SRCREV = "30e5c13abc496d0b39aaa6c25acebb088b9902e3"
 SRC_URI += "git://github.com/eclipse-kuksa/kuksa-databroker.git;branch=release/0.5.0;protocol=https \
             file://kuksa-databroker.service \
             file://databroker.env \
+            file://1-modify-build-options.patch;patchdir=${WORKDIR}/cargo_home/bitbake/protobuf-src-1.1.0+21.5 \
            "
 
 S = "${WORKDIR}/git"
