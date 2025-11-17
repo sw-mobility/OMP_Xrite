@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>RB</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>VRTE</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>ServiceInterfaceDeployments</SHORT-NAME>
+              <ELEMENTS>
+                <SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+                  <SHORT-NAME>VehicleControlService_Deployment</SHORT-NAME>
+                  <EVENT-DEPLOYMENTS>
+                    <SOMEIP-EVENT-DEPLOYMENT>
+                      <SHORT-NAME>VehicleSpeed</SHORT-NAME>
+                      <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/pst/com/VehicleControlService/VehicleSpeed</EVENT-REF>
+                      <EVENT-ID>1</EVENT-ID>
+                      <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                    </SOMEIP-EVENT-DEPLOYMENT>
+                  </EVENT-DEPLOYMENTS>
+                  <FIELD-DEPLOYMENTS>
+                    <SOMEIP-FIELD-DEPLOYMENT>
+                      <SHORT-NAME>ParkingBrakeStatus</SHORT-NAME>
+                      <FIELD-REF DEST="FIELD">/pst/com/VehicleControlService/ParkingBrakeStatus</FIELD-REF>
+                      <GET>
+                        <SHORT-NAME>getParkingBrakeStatus</SHORT-NAME>
+                        <METHOD-ID>3</METHOD-ID>
+                        <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                      </GET>
+                      <NOTIFIER>
+                        <SHORT-NAME>notifyParkingBrakeStatus</SHORT-NAME>
+                        <EVENT-ID>2</EVENT-ID>
+                        <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                      </NOTIFIER>
+                      <SET>
+                        <SHORT-NAME>setParkingBrakeStauts</SHORT-NAME>
+                        <METHOD-ID>4</METHOD-ID>
+                        <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                      </SET>
+                    </SOMEIP-FIELD-DEPLOYMENT>
+                  </FIELD-DEPLOYMENTS>
+                  <METHOD-DEPLOYMENTS>
+                    <SOMEIP-METHOD-DEPLOYMENT>
+                      <SHORT-NAME>getEvDriveReadyStatus</SHORT-NAME>
+                      <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/pst/com/VehicleControlService/getEvDriveReadyStatus</METHOD-REF>
+                      <METHOD-ID>1</METHOD-ID>
+                      <TRANSPORT-PROTOCOL>UDP</TRANSPORT-PROTOCOL>
+                    </SOMEIP-METHOD-DEPLOYMENT>
+                  </METHOD-DEPLOYMENTS>
+                  <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/pst/com/VehicleControlService</SERVICE-INTERFACE-REF>
+                  <EVENT-GROUPS>
+                    <SOMEIP-EVENT-GROUP>
+                      <SHORT-NAME>VehicleControlService_SomeipEventGroup</SHORT-NAME>
+                      <EVENT-GROUP-ID>1</EVENT-GROUP-ID>
+                      <EVENT-REFS>
+                        <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/RB/VRTE/ServiceInterfaceDeployments/VehicleControlService_Deployment/VehicleSpeed</EVENT-REF>
+                      </EVENT-REFS>
+                    </SOMEIP-EVENT-GROUP>
+                    <SOMEIP-EVENT-GROUP>
+                      <SHORT-NAME>VehicleControlService_Deployment_SomeipEventGroup</SHORT-NAME>
+                      <EVENT-GROUP-ID>2</EVENT-GROUP-ID>
+                      <EVENT-REFS>
+                        <EVENT-REF DEST="SOMEIP-EVENT-DEPLOYMENT">/RB/VRTE/ServiceInterfaceDeployments/VehicleControlService_Deployment/ParkingBrakeStatus/notifyParkingBrakeStatus</EVENT-REF>
+                      </EVENT-REFS>
+                    </SOMEIP-EVENT-GROUP>
+                  </EVENT-GROUPS>
+                  <SERVICE-INTERFACE-ID>256</SERVICE-INTERFACE-ID>
+                  <SERVICE-INTERFACE-VERSION>
+                    <MAJOR-VERSION>1</MAJOR-VERSION>
+                    <MINOR-VERSION>0</MINOR-VERSION>
+                  </SERVICE-INTERFACE-VERSION>
+                </SOMEIP-SERVICE-INTERFACE-DEPLOYMENT>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ServiceInstances</SHORT-NAME>
+              <ELEMENTS>
+                <PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                  <SHORT-NAME>MachineDesign_A_PSSI</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/RB/VRTE/ServiceInterfaceDeployments/VehicleControlService_Deployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <PROVIDED-EVENT-GROUPS>
+                    <SOMEIP-PROVIDED-EVENT-GROUP>
+                      <SHORT-NAME>MachineDesign_A_PSSI_VehicleControlService_Deployment_SomeipEventGroup</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/RB/VRTE/ServiceInterfaceDeployments/VehicleControlService_Deployment/VehicleControlService_Deployment_SomeipEventGroup</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>100</MULTICAST-THRESHOLD>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                    <SOMEIP-PROVIDED-EVENT-GROUP>
+                      <SHORT-NAME>MachineDesign_A_PSSI_VehicleControlService_SomeipEventGroup</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/RB/VRTE/ServiceInterfaceDeployments/VehicleControlService_Deployment/VehicleControlService_SomeipEventGroup</EVENT-GROUP-REF>
+                      <MULTICAST-THRESHOLD>100</MULTICAST-THRESHOLD>
+                    </SOMEIP-PROVIDED-EVENT-GROUP>
+                  </PROVIDED-EVENT-GROUPS>
+                  <SD-SERVER-CONFIG-REF DEST="SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG">/RB/VRTE/SomeipSdTimingConfigs/MachineDesign_A_SSDSSIC_4</SD-SERVER-CONFIG-REF>
+                  <SERVICE-INSTANCE-ID>1</SERVICE-INSTANCE-ID>
+                </PROVIDED-SOMEIP-SERVICE-INSTANCE>
+                <REQUIRED-SOMEIP-SERVICE-INSTANCE>
+                  <SHORT-NAME>MachineDesign_B_RSSI</SHORT-NAME>
+                  <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="SOMEIP-SERVICE-INTERFACE-DEPLOYMENT">/RB/VRTE/ServiceInterfaceDeployments/VehicleControlService_Deployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                  <REQUIRED-EVENT-GROUPS>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>MachineDesign_B_RSSI_VehicleControlService_SomeipEventGroup</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/RB/VRTE/ServiceInterfaceDeployments/VehicleControlService_Deployment/VehicleControlService_SomeipEventGroup</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/RB/VRTE/SomeipSdClientEventGroupTimingConfigs/MachineDesign_B_RSSI_VehicleControlService_SomeipEventGroup_SomeipSdClientEventGroupTimingConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                    <SOMEIP-REQUIRED-EVENT-GROUP>
+                      <SHORT-NAME>MachineDesign_B_RSSI_VehicleControlService_Deployment_SomeipEventGroup</SHORT-NAME>
+                      <EVENT-GROUP-REF DEST="SOMEIP-EVENT-GROUP">/RB/VRTE/ServiceInterfaceDeployments/VehicleControlService_Deployment/VehicleControlService_Deployment_SomeipEventGroup</EVENT-GROUP-REF>
+                      <SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF DEST="SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG">/RB/VRTE/SomeipSdClientEventGroupTimingConfigs/MachineDesign_B_RSSI_VehicleControlService_Deployment_SomeipEventGroup_SomeipSdClientEventGroupTimingConfig</SD-CLIENT-EVENT-GROUP-TIMING-CONFIG-REF>
+                    </SOMEIP-REQUIRED-EVENT-GROUP>
+                  </REQUIRED-EVENT-GROUPS>
+                  <REQUIRED-MINOR-VERSION>0</REQUIRED-MINOR-VERSION>
+                  <REQUIRED-SERVICE-INSTANCE-ID>1</REQUIRED-SERVICE-INSTANCE-ID>
+                  <SD-CLIENT-CONFIG-REF DEST="SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG">/RB/VRTE/SomeipSdTimingConfigs/MachineDesign_B_SSDCSIC_5</SD-CLIENT-CONFIG-REF>
+                  <VERSION-DRIVEN-FIND-BEHAVIOR>MINIMUM-MINOR-VERSION</VERSION-DRIVEN-FIND-BEHAVIOR>
+                </REQUIRED-SOMEIP-SERVICE-INSTANCE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>SomeipSdTimingConfigs</SHORT-NAME>
+              <ELEMENTS>
+                <SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG>
+                  <SHORT-NAME>MachineDesign_A_SSDSSIC_4</SHORT-NAME>
+                  <INITIAL-OFFER-BEHAVIOR>
+                    <INITIAL-DELAY-MAX-VALUE>1.0</INITIAL-DELAY-MAX-VALUE>
+                    <INITIAL-DELAY-MIN-VALUE>0.1</INITIAL-DELAY-MIN-VALUE>
+                    <INITIAL-REPETITIONS-BASE-DELAY>2.0</INITIAL-REPETITIONS-BASE-DELAY>
+                    <INITIAL-REPETITIONS-MAX>5</INITIAL-REPETITIONS-MAX>
+                  </INITIAL-OFFER-BEHAVIOR>
+                  <OFFER-CYCLIC-DELAY>5.0</OFFER-CYCLIC-DELAY>
+                  <REQUEST-RESPONSE-DELAY>
+                    <MAX-VALUE>3.0</MAX-VALUE>
+                    <MIN-VALUE>0.1</MIN-VALUE>
+                  </REQUEST-RESPONSE-DELAY>
+                  <SERVICE-OFFER-TIME-TO-LIVE>100</SERVICE-OFFER-TIME-TO-LIVE>
+                </SOMEIP-SD-SERVER-SERVICE-INSTANCE-CONFIG>
+                <SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG>
+                  <SHORT-NAME>MachineDesign_B_SSDCSIC_5</SHORT-NAME>
+                  <INITIAL-FIND-BEHAVIOR>
+                    <INITIAL-DELAY-MAX-VALUE>1.0</INITIAL-DELAY-MAX-VALUE>
+                    <INITIAL-DELAY-MIN-VALUE>0.1</INITIAL-DELAY-MIN-VALUE>
+                    <INITIAL-REPETITIONS-BASE-DELAY>2.0</INITIAL-REPETITIONS-BASE-DELAY>
+                    <INITIAL-REPETITIONS-MAX>8</INITIAL-REPETITIONS-MAX>
+                  </INITIAL-FIND-BEHAVIOR>
+                  <SERVICE-FIND-TIME-TO-LIVE>1000</SERVICE-FIND-TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-SERVICE-INSTANCE-CONFIG>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ServiceInstanceToMachineMappings</SHORT-NAME>
+              <ELEMENTS>
+                <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+                  <SHORT-NAME>MachineDesign_A_SSITMM_4</SHORT-NAME>
+                  <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/MachineDesigns/MachineDesign_A/MachineDesign_A_ECC</COMMUNICATION-CONNECTOR-REF>
+                  <SERVICE-INSTANCE-REFS>
+                    <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/RB/VRTE/ServiceInstances/MachineDesign_A_PSSI</SERVICE-INSTANCE-REF>
+                  </SERVICE-INSTANCE-REFS>
+                  <UDP-PORT-REF DEST="AP-APPLICATION-ENDPOINT">/MachineDesigns/MachineDesign_A/MachineDesign_A_ECC/MachineDesign_A_SSITMM_udpPort_44300</UDP-PORT-REF>
+                </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+                <SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+                  <SHORT-NAME>MachineDesign_B_SSITMM_5</SHORT-NAME>
+                  <COMMUNICATION-CONNECTOR-REF DEST="ETHERNET-COMMUNICATION-CONNECTOR">/MachineDesigns/MachineDesign_B/MachineDesign_B_ECC</COMMUNICATION-CONNECTOR-REF>
+                  <SERVICE-INSTANCE-REFS>
+                    <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/RB/VRTE/ServiceInstances/MachineDesign_B_RSSI</SERVICE-INSTANCE-REF>
+                  </SERVICE-INSTANCE-REFS>
+                  <UDP-PORT-REF DEST="AP-APPLICATION-ENDPOINT">/MachineDesigns/MachineDesign_B/MachineDesign_B_ECC/MachineDesign_B_SSITMM_5_udpPort_44500</UDP-PORT-REF>
+                </SOMEIP-SERVICE-INSTANCE-TO-MACHINE-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>SomeipSdClientEventGroupTimingConfigs</SHORT-NAME>
+              <ELEMENTS>
+                <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+                  <SHORT-NAME>MachineDesign_B_RSSI_Event_ComplexCOM_SomeipEventGroup_SomeipSdClientEventGroupTimingConfig</SHORT-NAME>
+                  <TIME-TO-LIVE>100</TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+                <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+                  <SHORT-NAME>MachineDesign_B_RSSI_VehicleControlService_Deployment_SomeipEventGroup_SomeipSdClientEventGroupTimingConfig</SHORT-NAME>
+                  <TIME-TO-LIVE>100</TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+                <SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+                  <SHORT-NAME>MachineDesign_B_RSSI_VehicleControlService_SomeipEventGroup_SomeipSdClientEventGroupTimingConfig</SHORT-NAME>
+                  <TIME-TO-LIVE>100</TIME-TO-LIVE>
+                </SOMEIP-SD-CLIENT-EVENT-GROUP-TIMING-CONFIG>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ServiceInstanceToPortPrototypeMappings</SHORT-NAME>
+              <ELEMENTS>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                  <SHORT-NAME>MachineDesign_A_PSSI_PPort</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/RB/VRTE/Executables/Publisher/Publisher_RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/pst/com/Publisher_Component/PPort</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/Publisher_Process</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="PROVIDED-SOMEIP-SERVICE-INSTANCE">/RB/VRTE/ServiceInstances/MachineDesign_A_PSSI</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                  <SHORT-NAME>MachineDesign_B_RSSI_RPort</SHORT-NAME>
+                  <PORT-PROTOTYPE-IREF>
+                    <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/RB/VRTE/Executables/Subscriber/Subscriber_RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                    <TARGET-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/pst/com/Subscriber_Component/RPort</TARGET-PORT-PROTOTYPE-REF>
+                  </PORT-PROTOTYPE-IREF>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/Subscriber_Process</PROCESS-REF>
+                  <SERVICE-INSTANCE-REF DEST="REQUIRED-SOMEIP-SERVICE-INSTANCE">/RB/VRTE/ServiceInstances/MachineDesign_B_RSSI</SERVICE-INSTANCE-REF>
+                </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

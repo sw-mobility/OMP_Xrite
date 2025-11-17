@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>RB</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>VRTE</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Executables</SHORT-NAME>
+              <ELEMENTS>
+                <EXECUTABLE>
+                  <SHORT-NAME>Subscriber</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="VRTE">
+                        <SD GID="path">/opt/vrte/usr/bin/Subscriber</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+                  <ROOT-SW-COMPONENT-PROTOTYPE>
+                    <SHORT-NAME>Subscriber_RootSwComponent</SHORT-NAME>
+                    <APPLICATION-TYPE-TREF DEST="ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE">/pst/com/Subscriber_Component</APPLICATION-TYPE-TREF>
+                  </ROOT-SW-COMPONENT-PROTOTYPE>
+                </EXECUTABLE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>Processes</SHORT-NAME>
+              <ELEMENTS>
+                <PROCESS>
+                  <SHORT-NAME>Subscriber_Process</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="VRTE">
+                        <SD GID="uid">0</SD>
+                        <SD GID="gid">0</SD>
+                        <SDG GID="dependencies">
+                          <SD GID="RUNNING">comd_B</SD>
+                        </SDG>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <EXECUTABLE-REF DEST="EXECUTABLE">/RB/VRTE/Executables/Subscriber</EXECUTABLE-REF>
+                  <STATE-DEPENDENT-STARTUP-CONFIGS>
+                    <STATE-DEPENDENT-STARTUP-CONFIG>
+                      <FUNCTION-GROUP-STATE-IREFS>
+                        <FUNCTION-GROUP-STATE-IREF>
+                          <CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet_1/MachineFG</CONTEXT-MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                          <TARGET-MODE-DECLARATION-REF DEST="MODE-DECLARATION">/ModeDeclarationGroups/MachineFG/Startup</TARGET-MODE-DECLARATION-REF>
+                        </FUNCTION-GROUP-STATE-IREF>
+                      </FUNCTION-GROUP-STATE-IREFS>
+                      <STARTUP-CONFIG-REF DEST="STARTUP-CONFIG">/RB/VRTE/StartupConfigs/Subscriber_StartupConfig</STARTUP-CONFIG-REF>
+                    </STATE-DEPENDENT-STARTUP-CONFIG>
+                  </STATE-DEPENDENT-STARTUP-CONFIGS>
+                </PROCESS>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>StartupConfigs</SHORT-NAME>
+              <ELEMENTS>
+                <STARTUP-CONFIG>
+                  <SHORT-NAME>Subscriber_StartupConfig</SHORT-NAME>
+                  <ENVIRONMENT-VARIABLES>
+                    <TAG-WITH-OPTIONAL-VALUE>
+                      <KEY>LD_LIBRARY_PATH</KEY>
+                      <VALUE>/lib:/usr/lib:/opt/vrte/lib</VALUE>
+                    </TAG-WITH-OPTIONAL-VALUE>
+                    <TAG-WITH-OPTIONAL-VALUE>
+                      <KEY>ECUCFG_ENV_VAR_ROOTFOLDER</KEY>
+                      <VALUE>/opt/vrte/usr/etc/ecu-cfg/processes/Subscriber</VALUE>
+                    </TAG-WITH-OPTIONAL-VALUE>
+                    <TAG-WITH-OPTIONAL-VALUE>
+                      <KEY>DLT_PIPE_DIR</KEY>
+                      <VALUE>/opt/vrte/tmp/dlt</VALUE>
+                    </TAG-WITH-OPTIONAL-VALUE>
+                  </ENVIRONMENT-VARIABLES>
+                  <SCHEDULING-POLICY>SCHED_RR</SCHEDULING-POLICY>
+                  <TERMINATION-BEHAVIOR>PROCESS-IS-SELF-TERMINATING</TERMINATION-BEHAVIOR>
+                  <TIMEOUT>
+                    <ENTER-TIMEOUT-VALUE>100.0</ENTER-TIMEOUT-VALUE>
+                    <EXIT-TIMEOUT-VALUE>100.0</EXIT-TIMEOUT-VALUE>
+                  </TIMEOUT>
+                </STARTUP-CONFIG>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ProcessToMachineMappings</SHORT-NAME>
+              <ELEMENTS>
+                <PROCESS-TO-MACHINE-MAPPING-SET>
+                  <SHORT-NAME>Subscriber_ExecutionManifest_ProcessToMachineMappingSet</SHORT-NAME>
+                  <PROCESS-TO-MACHINE-MAPPINGS>
+                    <PROCESS-TO-MACHINE-MAPPING>
+                      <SHORT-NAME>Subscriber_Process_Machine_B_Mapping</SHORT-NAME>
+                      <MACHINE-REF DEST="MACHINE">/Machines/Machine_B</MACHINE-REF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/Subscriber_Process</PROCESS-REF>
+                    </PROCESS-TO-MACHINE-MAPPING>
+                  </PROCESS-TO-MACHINE-MAPPINGS>
+                </PROCESS-TO-MACHINE-MAPPING-SET>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>DltContexts</SHORT-NAME>
+              <ELEMENTS>
+                <DLT-CONTEXT>
+                  <SHORT-NAME>SUB</SHORT-NAME>
+                  <CONTEXT-ID>SUB</CONTEXT-ID>
+                </DLT-CONTEXT>
+                <DLT-CONTEXT>
+                  <SHORT-NAME>SUB_IPC</SHORT-NAME>
+                  <CONTEXT-ID>PIPC</CONTEXT-ID>
+                </DLT-CONTEXT>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>DltContextToPortPrototypeMappings</SHORT-NAME>
+              <ELEMENTS>
+                <DLT-LOG-SINK-TO-PORT-PROTOTYPE-MAPPING>
+                  <SHORT-NAME>SUB_Subscriber_Process_dltMapping</SHORT-NAME>
+                  <DLT-CONTEXT-REF DEST="DLT-CONTEXT">/RB/VRTE/DltContexts/SUB</DLT-CONTEXT-REF>
+                  <DLT-LOG-SINK-REFS>
+                    <DLT-LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/Subscriber_Console</DLT-LOG-SINK-REF>
+                    <DLT-LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/Subscriber_Remote</DLT-LOG-SINK-REF>
+                  </DLT-LOG-SINK-REFS>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/Subscriber_Process</PROCESS-REF>
+                </DLT-LOG-SINK-TO-PORT-PROTOTYPE-MAPPING>
+                <DLT-LOG-SINK-TO-PORT-PROTOTYPE-MAPPING>
+                  <SHORT-NAME>SUB_IPC_Subscriber_Process_dltMapping</SHORT-NAME>
+                  <DLT-CONTEXT-REF DEST="DLT-CONTEXT">/RB/VRTE/DltContexts/SUB_IPC</DLT-CONTEXT-REF>
+                  <DLT-LOG-SINK-REFS>
+                    <DLT-LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/comd_Remote</DLT-LOG-SINK-REF>
+                  </DLT-LOG-SINK-REFS>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/Subscriber_Process</PROCESS-REF>
+                </DLT-LOG-SINK-TO-PORT-PROTOTYPE-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>DltLogSinks</SHORT-NAME>
+              <ELEMENTS>
+                <DLT-LOG-SINK>
+                  <SHORT-NAME>Subscriber_Console</SHORT-NAME>
+                  <CATEGORY>DLT_LOGSINK_CONSOLE</CATEGORY>
+                  <DEFAULT-LOG-THRESHOLD>INFO</DEFAULT-LOG-THRESHOLD>
+                </DLT-LOG-SINK>
+                <DLT-LOG-SINK>
+                  <SHORT-NAME>Subscriber_Remote</SHORT-NAME>
+                  <CATEGORY>DLT_LOGSINK_REMOTE</CATEGORY>
+                  <DEFAULT-LOG-THRESHOLD>VERBOSE</DEFAULT-LOG-THRESHOLD>
+                </DLT-LOG-SINK>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>DltApplicationToProcessMappings</SHORT-NAME>
+              <ELEMENTS>
+                <DLT-APPLICATION-TO-PROCESS-MAPPING>
+                  <SHORT-NAME>SUB_DltApplicationMapping</SHORT-NAME>
+                  <DLT-APPLICATION-REF DEST="DLT-APPLICATION">/RB/VRTE/DltEcus/ECUB/SUB_DltApp</DLT-APPLICATION-REF>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/Subscriber_Process</PROCESS-REF>
+                </DLT-APPLICATION-TO-PROCESS-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

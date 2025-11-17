@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Machines</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE>
+          <SHORT-NAME>Machine_B</SHORT-NAME>
+          <MACHINE-DESIGN-REF DEST="MACHINE-DESIGN">/MachineDesigns/MachineDesign_B</MACHINE-DESIGN-REF>
+          <MODULE-INSTANTIATIONS>
+            <OS-MODULE-INSTANTIATION>
+              <SHORT-NAME>OsModuleInstantiation_1</SHORT-NAME>
+              <RESOURCE-GROUPS>
+                <RESOURCE-GROUP>
+                  <SHORT-NAME>ResourceGroup_1</SHORT-NAME>
+                </RESOURCE-GROUP>
+              </RESOURCE-GROUPS>
+            </OS-MODULE-INSTANTIATION>
+            <LOG-AND-TRACE-INSTANTIATION>
+              <SHORT-NAME>LogAndTraceInstatiation_B</SHORT-NAME>
+              <DLT-ECU-REF DEST="DLT-ECU">/RB/VRTE/DltEcus/ECUB</DLT-ECU-REF>
+              <LOG-SINK-REFS>
+                <LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/Subscriber_Console</LOG-SINK-REF>
+                <LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/Subscriber_Remote</LOG-SINK-REF>
+                <LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/EXM_Remote</LOG-SINK-REF>
+                <LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/EXM_Console</LOG-SINK-REF>
+              </LOG-SINK-REFS>
+            </LOG-AND-TRACE-INSTANTIATION>
+          </MODULE-INSTANTIATIONS>
+          <PROCESSORS>
+            <PROCESSOR>
+              <SHORT-NAME>Processor_0</SHORT-NAME>
+              <CORES>
+                <PROCESSOR-CORE>
+                  <SHORT-NAME>Core_0</SHORT-NAME>
+                  <CORE-ID>0</CORE-ID>
+                </PROCESSOR-CORE>
+                <PROCESSOR-CORE>
+                  <SHORT-NAME>Core_1</SHORT-NAME>
+                  <CORE-ID>1</CORE-ID>
+                </PROCESSOR-CORE>
+              </CORES>
+            </PROCESSOR>
+          </PROCESSORS>
+          <TRUSTED-PLATFORM-EXECUTABLE-LAUNCH-BEHAVIOR>NO-TRUSTED-PLATFORM-SUPPORT</TRUSTED-PLATFORM-EXECUTABLE-LAUNCH-BEHAVIOR>
+        </MACHINE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+    <AR-PACKAGE>
+      <SHORT-NAME>RB</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>VRTE</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>DltEcus</SHORT-NAME>
+              <ELEMENTS>
+                <DLT-ECU>
+                  <SHORT-NAME>ECUB</SHORT-NAME>
+                  <APPLICATIONS>
+                    <DLT-APPLICATION>
+                      <SHORT-NAME>SUB_DltApp</SHORT-NAME>
+                      <APPLICATION-ID>SAPP</APPLICATION-ID>
+                    </DLT-APPLICATION>
+                    <DLT-APPLICATION>
+                      <SHORT-NAME>COM_B_DltApp</SHORT-NAME>
+                      <APPLICATION-DESCRIPTION>DltApplication for comd_B</APPLICATION-DESCRIPTION>
+                      <APPLICATION-ID>COM</APPLICATION-ID>
+                    </DLT-APPLICATION>
+                    <DLT-APPLICATION>
+                      <SHORT-NAME>EXM_B_DltApp</SHORT-NAME>
+                      <APPLICATION-DESCRIPTION>EXMB DltApplication</APPLICATION-DESCRIPTION>
+                      <APPLICATION-ID>EXMB</APPLICATION-ID>
+                    </DLT-APPLICATION>
+                  </APPLICATIONS>
+                  <ECU-ID>ECUB</ECU-ID>
+                </DLT-ECU>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

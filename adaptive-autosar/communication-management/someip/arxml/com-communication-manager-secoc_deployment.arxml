@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>com</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>secoc</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>deployments</SHORT-NAME>
+                  <ELEMENTS>
+                    <USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                      <SHORT-NAME>verification_status_deployment</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="VRTE">
+                            <SD GID="Service-Id">65504</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <EVENT-DEPLOYMENTS>
+                        <USER-DEFINED-EVENT-DEPLOYMENT>
+                          <SHORT-NAME>VerificationStatus</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="VRTE">
+                                <SD GID="Event-Id">1</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/ara/com/secoc/VerificationStatus/VerificationStatus</EVENT-REF>
+                        </USER-DEFINED-EVENT-DEPLOYMENT>
+                      </EVENT-DEPLOYMENTS>
+                      <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatus</SERVICE-INTERFACE-REF>
+                    </USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                    <USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                      <SHORT-NAME>verification_status_configuration_by_dataId_deployment</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="VRTE">
+                            <SD GID="Service-Id">65505</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <METHOD-DEPLOYMENTS>
+                        <USER-DEFINED-METHOD-DEPLOYMENT>
+                          <SHORT-NAME>VerifyStatusOverride</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="VRTE">
+                                <SD GID="Method-Id">1</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ara/com/secoc/VerificationStatusConfigurationByDataId/VerifyStatusOverride</METHOD-REF>
+                        </USER-DEFINED-METHOD-DEPLOYMENT>
+                      </METHOD-DEPLOYMENTS>
+                      <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatusConfigurationByDataId</SERVICE-INTERFACE-REF>
+                    </USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                    <USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                      <SHORT-NAME>verification_status_configuration_by_freshnessId_deployment</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="VRTE">
+                            <SD GID="Service-Id">65506</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <METHOD-DEPLOYMENTS>
+                        <USER-DEFINED-METHOD-DEPLOYMENT>
+                          <SHORT-NAME>VerifyStatusOverride</SHORT-NAME>
+                          <ADMIN-DATA>
+                            <SDGS>
+                              <SDG GID="VRTE">
+                                <SD GID="Method-Id">1</SD>
+                              </SDG>
+                            </SDGS>
+                          </ADMIN-DATA>
+                          <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/ara/com/secoc/VerificationStatusConfigurationByFreshnessId/VerifyStatusOverride</METHOD-REF>
+                        </USER-DEFINED-METHOD-DEPLOYMENT>
+                      </METHOD-DEPLOYMENTS>
+                      <SERVICE-INTERFACE-REF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatusConfigurationByFreshnessId</SERVICE-INTERFACE-REF>
+                    </USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>instances</SHORT-NAME>
+                  <ELEMENTS>
+                    <PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+                      <SHORT-NAME>ProvidedVerificationStatus</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="VRTE">
+                            <SD GID="Service-Instance-Id">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/ara/com/secoc/deployments/verification_status_deployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                    </PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+                    <PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+                      <SHORT-NAME>ProvidedVerificationStatusConfigurationByDataId</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="VRTE">
+                            <SD GID="Service-Instance-Id">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/ara/com/secoc/deployments/verification_status_configuration_by_dataId_deployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                    </PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+                    <PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+                      <SHORT-NAME>ProvidedVerificationStatusConfigurationByFreshnessId</SHORT-NAME>
+                      <ADMIN-DATA>
+                        <SDGS>
+                          <SDG GID="VRTE">
+                            <SD GID="Service-Instance-Id">1</SD>
+                          </SDG>
+                        </SDGS>
+                      </ADMIN-DATA>
+                      <SERVICE-INTERFACE-DEPLOYMENT-REF DEST="USER-DEFINED-SERVICE-INTERFACE-DEPLOYMENT">/ara/com/secoc/deployments/verification_status_configuration_by_freshnessId_deployment</SERVICE-INTERFACE-DEPLOYMENT-REF>
+                    </PROVIDED-USER-DEFINED-SERVICE-INSTANCE>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

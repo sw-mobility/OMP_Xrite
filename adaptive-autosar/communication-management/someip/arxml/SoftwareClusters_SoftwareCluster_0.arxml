@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>SoftwareClusters</SHORT-NAME>
+      <ELEMENTS>
+        <SOFTWARE-CLUSTER>
+          <SHORT-NAME>SoftwareCluster_0</SHORT-NAME>
+          <CATEGORY>PLATFORM_CORE</CATEGORY>
+          <CLAIMED-FUNCTION-GROUP-REFS>
+            <CLAIMED-FUNCTION-GROUP-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/FunctionGroupSets/FunctionGroupSet_0/MachineFG</CLAIMED-FUNCTION-GROUP-REF>
+          </CLAIMED-FUNCTION-GROUP-REFS>
+          <CONTAINED-PROCESS-REFS>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/comd_A</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/Arapipcd_A</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/DLT_A</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/rb_exmd_A</CONTAINED-PROCESS-REF>
+            <CONTAINED-PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/Publisher_Process</CONTAINED-PROCESS-REF>
+          </CONTAINED-PROCESS-REFS>
+          <DESIGN-REFS>
+            <DESIGN-REF DEST="SOFTWARE-CLUSTER-DESIGN">/SoftwareClusterDesigns/SoftwareClusterDesign_0</DESIGN-REF>
+          </DESIGN-REFS>
+          <MODULE-INSTANTIATION-REFS>
+            <MODULE-INSTANTIATION-REF DEST="LOG-AND-TRACE-INSTANTIATION">/Machines/Machine_A/LogAndTraceInstatiation_A</MODULE-INSTANTIATION-REF>
+          </MODULE-INSTANTIATION-REFS>
+          <VENDOR-ID>11</VENDOR-ID>
+          <VENDOR-SIGNATURE-REF DEST="CRYPTO-SERVICE-CERTIFICATE">/SoftwareClusters/CryptoServiceCertificate_0</VENDOR-SIGNATURE-REF>
+          <VERSION>1.0.0-alpha+001</VERSION>
+        </SOFTWARE-CLUSTER>
+        <CRYPTO-SERVICE-CERTIFICATE>
+          <SHORT-NAME>CryptoServiceCertificate_0</SHORT-NAME>
+        </CRYPTO-SERVICE-CERTIFICATE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

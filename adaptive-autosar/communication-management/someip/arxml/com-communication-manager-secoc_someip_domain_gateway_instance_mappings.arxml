@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>com</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>secoc</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>mappings</SHORT-NAME>
+                  <ELEMENTS>
+                    <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                      <SHORT-NAME>ProvidedVerificationStatusMapping_A</SHORT-NAME>
+                      <PORT-PROTOTYPE-IREF>
+                        <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/RB/VRTE/Executables/com_sipgateway/com_sipgateway_RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                        <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ara/com/secoc/SecOCAppProvider/pp_VerificationStatus</TARGET-PORT-PROTOTYPE-REF>
+                      </PORT-PROTOTYPE-IREF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/comd_A</PROCESS-REF>
+                      <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/ara/com/secoc/instances/ProvidedVerificationStatus</SERVICE-INSTANCE-REF>
+                    </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                    <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                      <SHORT-NAME>ProvidedVerificationStatusConfigurationByDataIdMapping_A</SHORT-NAME>
+                      <PORT-PROTOTYPE-IREF>
+                        <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/RB/VRTE/Executables/com_sipgateway/com_sipgateway_RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                        <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ara/com/secoc/SecOCAppProvider/pp_VerificationStatusConfigurationByDataId</TARGET-PORT-PROTOTYPE-REF>
+                      </PORT-PROTOTYPE-IREF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/comd_A</PROCESS-REF>
+                      <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/ara/com/secoc/instances/ProvidedVerificationStatusConfigurationByDataId</SERVICE-INSTANCE-REF>
+                    </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                    <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                      <SHORT-NAME>ProvidedVerificationStatusConfigurationByFreshnessIdMapping_A</SHORT-NAME>
+                      <PORT-PROTOTYPE-IREF>
+                        <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/RB/VRTE/Executables/com_sipgateway/com_sipgateway_RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                        <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ara/com/secoc/SecOCAppProvider/pp_VerificationStatusConfigurationByFreshnessId</TARGET-PORT-PROTOTYPE-REF>
+                      </PORT-PROTOTYPE-IREF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/comd_A</PROCESS-REF>
+                      <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/ara/com/secoc/instances/ProvidedVerificationStatusConfigurationByFreshnessId</SERVICE-INSTANCE-REF>
+                    </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                    <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                      <SHORT-NAME>ProvidedVerificationStatusMapping_B</SHORT-NAME>
+                      <PORT-PROTOTYPE-IREF>
+                        <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/RB/VRTE/Executables/com_sipgateway/com_sipgateway_RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                        <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ara/com/secoc/SecOCAppProvider/pp_VerificationStatus</TARGET-PORT-PROTOTYPE-REF>
+                      </PORT-PROTOTYPE-IREF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/comd_B</PROCESS-REF>
+                      <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/ara/com/secoc/instances/ProvidedVerificationStatus</SERVICE-INSTANCE-REF>
+                    </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                    <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                      <SHORT-NAME>ProvidedVerificationStatusConfigurationByDataIdMapping_B</SHORT-NAME>
+                      <PORT-PROTOTYPE-IREF>
+                        <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/RB/VRTE/Executables/com_sipgateway/com_sipgateway_RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                        <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ara/com/secoc/SecOCAppProvider/pp_VerificationStatusConfigurationByDataId</TARGET-PORT-PROTOTYPE-REF>
+                      </PORT-PROTOTYPE-IREF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/comd_B</PROCESS-REF>
+                      <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/ara/com/secoc/instances/ProvidedVerificationStatusConfigurationByDataId</SERVICE-INSTANCE-REF>
+                    </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                    <SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                      <SHORT-NAME>ProvidedVerificationStatusConfigurationByFreshnessIdMapping_B</SHORT-NAME>
+                      <PORT-PROTOTYPE-IREF>
+                        <CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF DEST="ROOT-SW-COMPONENT-PROTOTYPE">/RB/VRTE/Executables/com_sipgateway/com_sipgateway_RootSwComponent</CONTEXT-ROOT-SW-COMPONENT-PROTOTYPE-REF>
+                        <TARGET-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/ara/com/secoc/SecOCAppProvider/pp_VerificationStatusConfigurationByFreshnessId</TARGET-PORT-PROTOTYPE-REF>
+                      </PORT-PROTOTYPE-IREF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/comd_B</PROCESS-REF>
+                      <SERVICE-INSTANCE-REF DEST="PROVIDED-USER-DEFINED-SERVICE-INSTANCE">/ara/com/secoc/instances/ProvidedVerificationStatusConfigurationByFreshnessId</SERVICE-INSTANCE-REF>
+                    </SERVICE-INSTANCE-TO-PORT-PROTOTYPE-MAPPING>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

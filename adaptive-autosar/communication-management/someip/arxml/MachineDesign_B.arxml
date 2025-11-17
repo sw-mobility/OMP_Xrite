@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>MachineDesigns</SHORT-NAME>
+      <ELEMENTS>
+        <MACHINE-DESIGN>
+          <SHORT-NAME>MachineDesign_B</SHORT-NAME>
+          <COMMUNICATION-CONNECTORS>
+            <ETHERNET-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>MachineDesign_B_ECC</SHORT-NAME>
+              <AP-APPLICATION-ENDPOINTS>
+                <AP-APPLICATION-ENDPOINT>
+                  <SHORT-NAME>MachineDesign_B_SSITMM_5_udpPort_44500</SHORT-NAME>
+                  <TP-CONFIGURATION>
+                    <UDP-TP>
+                      <UDP-TP-PORT>
+                        <PORT-NUMBER>44500</PORT-NUMBER>
+                      </UDP-TP-PORT>
+                    </UDP-TP>
+                  </TP-CONFIGURATION>
+                </AP-APPLICATION-ENDPOINT>
+              </AP-APPLICATION-ENDPOINTS>
+              <UNICAST-NETWORK-ENDPOINT-REF DEST="NETWORK-ENDPOINT">/CommunicationClusters/EthernetCluster_0/EthernetPhysicalChannel_0/NetworkEndpoint_B</UNICAST-NETWORK-ENDPOINT-REF>
+            </ETHERNET-COMMUNICATION-CONNECTOR>
+          </COMMUNICATION-CONNECTORS>
+          <SERVICE-DISCOVERY-CONFIGS>
+            <SOMEIP-SERVICE-DISCOVERY>
+              <MULTICAST-SD-IP-ADDRESS-REF DEST="NETWORK-ENDPOINT">/CommunicationClusters/EthernetCluster_0/EthernetPhysicalChannel_0/Multicast_B</MULTICAST-SD-IP-ADDRESS-REF>
+              <SOMEIP-SERVICE-DISCOVERY-PORT>30490</SOMEIP-SERVICE-DISCOVERY-PORT>
+            </SOMEIP-SERVICE-DISCOVERY>
+          </SERVICE-DISCOVERY-CONFIGS>
+        </MACHINE-DESIGN>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

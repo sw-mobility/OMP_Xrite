@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>etas</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>com</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Service_Interface</SHORT-NAME>
+              <AR-PACKAGES>
+                <AR-PACKAGE>
+                  <SHORT-NAME>TransformationPropsSets</SHORT-NAME>
+                  <ELEMENTS>
+                    <TRANSFORMATION-PROPS-SET>
+                      <SHORT-NAME>transformationPropsSet</SHORT-NAME>
+                      <TRANSFORMATION-PROPSS>
+                        <AP-SOMEIP-TRANSFORMATION-PROPS>
+                          <SHORT-NAME>SerProps_Event</SHORT-NAME>
+                          <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+                        </AP-SOMEIP-TRANSFORMATION-PROPS>
+                        <AP-SOMEIP-TRANSFORMATION-PROPS>
+                          <SHORT-NAME>SerProps_Method</SHORT-NAME>
+                          <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+                        </AP-SOMEIP-TRANSFORMATION-PROPS>
+                        <AP-SOMEIP-TRANSFORMATION-PROPS>
+                          <SHORT-NAME>SerProps_Field</SHORT-NAME>
+                          <BYTE-ORDER>MOST-SIGNIFICANT-BYTE-FIRST</BYTE-ORDER>
+                        </AP-SOMEIP-TRANSFORMATION-PROPS>
+                      </TRANSFORMATION-PROPSS>
+                    </TRANSFORMATION-PROPS-SET>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+                <AR-PACKAGE>
+                  <SHORT-NAME>TransformationPropsToServiceInterfaceElementMappings</SHORT-NAME>
+                  <ELEMENTS>
+                    <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+                      <SHORT-NAME>SerialiserMapping_SerProps_Event</SHORT-NAME>
+                      <EVENT-REFS>
+                        <EVENT-REF DEST="VARIABLE-DATA-PROTOTYPE">/pst/com/VehicleControlService/VehicleSpeed</EVENT-REF>
+                      </EVENT-REFS>
+                      <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/etas/com/Service_Interface/TransformationPropsSets/transformationPropsSet/SerProps_Event</TRANSFORMATION-PROPS-REF>
+                    </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+                    <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+                      <SHORT-NAME>SerialiserMapping_SerProps_Method</SHORT-NAME>
+                      <METHOD-REFS>
+                        <METHOD-REF DEST="CLIENT-SERVER-OPERATION">/pst/com/VehicleControlService/getEvDriveReadyStatus</METHOD-REF>
+                      </METHOD-REFS>
+                      <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/etas/com/Service_Interface/TransformationPropsSets/transformationPropsSet/SerProps_Method</TRANSFORMATION-PROPS-REF>
+                    </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+                    <TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+                      <SHORT-NAME>SerialiserMapping_SerProps_Field</SHORT-NAME>
+                      <FIELD-REFS>
+                        <FIELD-REF DEST="FIELD">/pst/com/VehicleControlService/ParkingBrakeStatus</FIELD-REF>
+                      </FIELD-REFS>
+                      <TRANSFORMATION-PROPS-REF DEST="AP-SOMEIP-TRANSFORMATION-PROPS">/etas/com/Service_Interface/TransformationPropsSets/transformationPropsSet/SerProps_Field</TRANSFORMATION-PROPS-REF>
+                    </TRANSFORMATION-PROPS-TO-SERVICE-INTERFACE-ELEMENT-MAPPING>
+                  </ELEMENTS>
+                </AR-PACKAGE>
+              </AR-PACKAGES>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

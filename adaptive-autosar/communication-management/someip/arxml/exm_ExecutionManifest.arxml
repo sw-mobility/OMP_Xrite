@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>RB</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>VRTE</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>Executables</SHORT-NAME>
+              <ELEMENTS>
+                <EXECUTABLE>
+                  <SHORT-NAME>exm</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="VRTE">
+                        <SD GID="path">/opt/vrte/exm-aap-execution-manager/bin/rb-exmd</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <REPORTING-BEHAVIOR>REPORTS-EXECUTION-STATE</REPORTING-BEHAVIOR>
+                </EXECUTABLE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>Processes</SHORT-NAME>
+              <ELEMENTS>
+                <PROCESS>
+                  <SHORT-NAME>rb_exmd_A</SHORT-NAME>
+                  <EXECUTABLE-REF DEST="EXECUTABLE">/RB/VRTE/Executables/exm</EXECUTABLE-REF>
+                  <FUNCTION-CLUSTER-AFFILIATION>EXECUTION_MANAGEMENT</FUNCTION-CLUSTER-AFFILIATION>
+                </PROCESS>
+                <PROCESS>
+                  <SHORT-NAME>rb_exmd_B</SHORT-NAME>
+                  <EXECUTABLE-REF DEST="EXECUTABLE">/RB/VRTE/Executables/exm</EXECUTABLE-REF>
+                  <FUNCTION-CLUSTER-AFFILIATION>EXECUTION_MANAGEMENT</FUNCTION-CLUSTER-AFFILIATION>
+                </PROCESS>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>DltContexts</SHORT-NAME>
+              <ELEMENTS>
+                <DLT-CONTEXT>
+                  <SHORT-NAME>exm_A_DltContext</SHORT-NAME>
+                  <CONTEXT-ID>EXM</CONTEXT-ID>
+                </DLT-CONTEXT>
+                <DLT-CONTEXT>
+                  <SHORT-NAME>exm_B_DltContext</SHORT-NAME>
+                  <CONTEXT-ID>EXM</CONTEXT-ID>
+                </DLT-CONTEXT>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>DltContextToPortPrototypeMappings</SHORT-NAME>
+              <ELEMENTS>
+                <DLT-LOG-SINK-TO-PORT-PROTOTYPE-MAPPING>
+                  <SHORT-NAME>exm_A_DltContext_exm_A_dltMapping</SHORT-NAME>
+                  <DLT-CONTEXT-REF DEST="DLT-CONTEXT">/RB/VRTE/DltContexts/exm_A_DltContext</DLT-CONTEXT-REF>
+                  <DLT-LOG-SINK-REFS>
+                    <DLT-LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/EXM_Remote</DLT-LOG-SINK-REF>
+                    <DLT-LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/EXM_Console</DLT-LOG-SINK-REF>
+                  </DLT-LOG-SINK-REFS>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/rb_exmd_A</PROCESS-REF>
+                </DLT-LOG-SINK-TO-PORT-PROTOTYPE-MAPPING>
+                <DLT-LOG-SINK-TO-PORT-PROTOTYPE-MAPPING>
+                  <SHORT-NAME>exm_B_DltContext_exm_B_dltMapping</SHORT-NAME>
+                  <DLT-CONTEXT-REF DEST="DLT-CONTEXT">/RB/VRTE/DltContexts/exm_B_DltContext</DLT-CONTEXT-REF>
+                  <DLT-LOG-SINK-REFS>
+                    <DLT-LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/EXM_Remote</DLT-LOG-SINK-REF>
+                    <DLT-LOG-SINK-REF DEST="DLT-LOG-SINK">/RB/VRTE/DltLogSinks/EXM_Console</DLT-LOG-SINK-REF>
+                  </DLT-LOG-SINK-REFS>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/rb_exmd_B</PROCESS-REF>
+                </DLT-LOG-SINK-TO-PORT-PROTOTYPE-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>DltApplicationToProcessMappings</SHORT-NAME>
+              <ELEMENTS>
+                <DLT-APPLICATION-TO-PROCESS-MAPPING>
+                  <SHORT-NAME>exm_A_DltApplicationToProcessMapping</SHORT-NAME>
+                  <DLT-APPLICATION-REF DEST="DLT-APPLICATION">/RB/VRTE/DltEcus/ECUA/EXM_A_DltApp</DLT-APPLICATION-REF>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/rb_exmd_A</PROCESS-REF>
+                </DLT-APPLICATION-TO-PROCESS-MAPPING>
+                <DLT-APPLICATION-TO-PROCESS-MAPPING>
+                  <SHORT-NAME>exm_B_DltApplicationToProcessMapping</SHORT-NAME>
+                  <DLT-APPLICATION-REF DEST="DLT-APPLICATION">/RB/VRTE/DltEcus/ECUB/EXM_B_DltApp</DLT-APPLICATION-REF>
+                  <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/rb_exmd_B</PROCESS-REF>
+                </DLT-APPLICATION-TO-PROCESS-MAPPING>
+              </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+              <SHORT-NAME>ProcessToMachineMappings</SHORT-NAME>
+              <ELEMENTS>
+                <PROCESS-TO-MACHINE-MAPPING-SET>
+                  <SHORT-NAME>exm_ExecutionManifest_ProcessToMachineMappingSet</SHORT-NAME>
+                  <PROCESS-TO-MACHINE-MAPPINGS>
+                    <PROCESS-TO-MACHINE-MAPPING>
+                      <SHORT-NAME>rb_exmd_B_Machine_A_Mapping</SHORT-NAME>
+                      <MACHINE-REF DEST="MACHINE">/Machines/Machine_A</MACHINE-REF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/rb_exmd_A</PROCESS-REF>
+                    </PROCESS-TO-MACHINE-MAPPING>
+                    <PROCESS-TO-MACHINE-MAPPING>
+                      <SHORT-NAME>rb_exmd_B_Machine_B_Mapping</SHORT-NAME>
+                      <MACHINE-REF DEST="MACHINE">/Machines/Machine_B</MACHINE-REF>
+                      <PROCESS-REF DEST="PROCESS">/RB/VRTE/Processes/rb_exmd_B</PROCESS-REF>
+                    </PROCESS-TO-MACHINE-MAPPING>
+                  </PROCESS-TO-MACHINE-MAPPINGS>
+                </PROCESS-TO-MACHINE-MAPPING-SET>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>ara</SHORT-NAME>
+      <AR-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>com</SHORT-NAME>
+          <AR-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>secoc</SHORT-NAME>
+              <ELEMENTS>
+                <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>VerificationStatusResult</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/com/secoc/VerificationStatusResult_CM</COMPU-METHOD-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ara_1</SHORT-NAME>
+                      <SYMBOL>ara</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>com_2</SHORT-NAME>
+                      <SYMBOL>com</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>secoc_3</SHORT-NAME>
+                      <SYMBOL>secoc</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                  <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-REFERENCE-REF>
+                </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                <COMPU-METHOD>
+                  <SHORT-NAME>VerificationStatusResult_CM</SHORT-NAME>
+                  <CATEGORY>TEXTTABLE</CATEGORY>
+                  <COMPU-INTERNAL-TO-PHYS>
+                    <COMPU-SCALES>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcVerificationSuccess</SHORT-LABEL>
+                        <SYMBOL>kSecOcVerificationSuccess</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcVerificationSuccess</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcVerificationFailure</SHORT-LABEL>
+                        <SYMBOL>kSecOcVerificationFailure</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcVerificationFailure</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcFreshnessFailure</SHORT-LABEL>
+                        <SYMBOL>kSecOcFreshnessFailure</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcFreshnessFailure</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcAuthenticationBuildFailure</SHORT-LABEL>
+                        <SYMBOL>kSecOcAuthenticationBuildFailure</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x03</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x03</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcAuthenticationBuildFailure</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcNoVerification</SHORT-LABEL>
+                        <SYMBOL>kSecOcNoVerification</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x04</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x04</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcNoVerification</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcVerificationFailureOverwritten</SHORT-LABEL>
+                        <SYMBOL>kSecOcVerificationFailureOverwritten</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x05</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x05</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcVerificationFailureOverwritten</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                    </COMPU-SCALES>
+                  </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+                <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>OverrideStatus</SHORT-NAME>
+                  <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-DATA-DEF-PROPS-VARIANTS>
+                      <SW-DATA-DEF-PROPS-CONDITIONAL>
+                        <COMPU-METHOD-REF DEST="COMPU-METHOD">/ara/com/secoc/OverrideStatus_CM</COMPU-METHOD-REF>
+                      </SW-DATA-DEF-PROPS-CONDITIONAL>
+                    </SW-DATA-DEF-PROPS-VARIANTS>
+                  </SW-DATA-DEF-PROPS>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ara_1</SHORT-NAME>
+                      <SYMBOL>ara</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>com_2</SHORT-NAME>
+                      <SYMBOL>com</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>secoc_3</SHORT-NAME>
+                      <SYMBOL>secoc</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                  <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-REFERENCE-REF>
+                </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                <COMPU-METHOD>
+                  <SHORT-NAME>OverrideStatus_CM</SHORT-NAME>
+                  <CATEGORY>TEXTTABLE</CATEGORY>
+                  <COMPU-INTERNAL-TO-PHYS>
+                    <COMPU-SCALES>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcOverrideDropUntilNotice</SHORT-LABEL>
+                        <SYMBOL>kSecOcOverrideDropUntilNotice</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x00</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x00</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcOverrideDropUntilNotice</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcOverrideDropUntilLimit</SHORT-LABEL>
+                        <SYMBOL>kSecOcOverrideDropUntilLimit</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x01</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x01</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcOverrideDropUntilLimit</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcOverrideCancel</SHORT-LABEL>
+                        <SYMBOL>kSecOcOverrideCancel</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x02</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x02</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcOverrideCancel</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcOverridePassUntilNotice</SHORT-LABEL>
+                        <SYMBOL>kSecOcOverridePassUntilNotice</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x40</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x40</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcOverridePassUntilNotice</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcOverrideSkipUntilLimit</SHORT-LABEL>
+                        <SYMBOL>kSecOcOverrideSkipUntilLimit</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x41</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x41</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcOverrideSkipUntilLimit</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcOverridePassUntilLimit</SHORT-LABEL>
+                        <SYMBOL>kSecOcOverridePassUntilLimit</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x42</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x42</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcOverridePassUntilLimit</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                      <COMPU-SCALE>
+                        <SHORT-LABEL>kSecOcOverrideSkipUntilNotice</SHORT-LABEL>
+                        <SYMBOL>kSecOcOverrideSkipUntilNotice</SYMBOL>
+                        <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0x43</LOWER-LIMIT>
+                        <UPPER-LIMIT INTERVAL-TYPE="CLOSED">0x43</UPPER-LIMIT>
+                        <COMPU-CONST>
+                          <VT>kSecOcOverrideSkipUntilNotice</VT>
+                        </COMPU-CONST>
+                      </COMPU-SCALE>
+                    </COMPU-SCALES>
+                  </COMPU-INTERNAL-TO-PHYS>
+                </COMPU-METHOD>
+                <STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                  <SHORT-NAME>VerificationStatusContainer</SHORT-NAME>
+                  <CATEGORY>STRUCTURE</CATEGORY>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ara_1</SHORT-NAME>
+                      <SYMBOL>ara</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>com_2</SHORT-NAME>
+                      <SYMBOL>com</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>secoc_3</SHORT-NAME>
+                      <SYMBOL>secoc</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <SUB-ELEMENTS>
+                    <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>freshnessValueID</SHORT-NAME>
+                      <TYPE-REFERENCE>
+                        <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-REFERENCE-REF>
+                      </TYPE-REFERENCE>
+                    </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                    <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>verificationStatus</SHORT-NAME>
+                      <TYPE-REFERENCE>
+                        <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/com/secoc/VerificationStatusResult</TYPE-REFERENCE-REF>
+                      </TYPE-REFERENCE>
+                    </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                    <CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                      <SHORT-NAME>secOCDataId</SHORT-NAME>
+                      <TYPE-REFERENCE>
+                        <TYPE-REFERENCE-REF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-REFERENCE-REF>
+                      </TYPE-REFERENCE>
+                    </CPP-IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                  </SUB-ELEMENTS>
+                  <TYPE-EMITTER>TYPE_EMITTER_ARA</TYPE-EMITTER>
+                </STD-CPP-IMPLEMENTATION-DATA-TYPE>
+                <SERVICE-INTERFACE>
+                  <SHORT-NAME>VerificationStatus</SHORT-NAME>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ara_1</SHORT-NAME>
+                      <SYMBOL>ara</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>com_2</SHORT-NAME>
+                      <SYMBOL>com</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>secoc_3</SHORT-NAME>
+                      <SYMBOL>secoc</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <EVENTS>
+                    <VARIABLE-DATA-PROTOTYPE>
+                      <SHORT-NAME>VerificationStatus</SHORT-NAME>
+                      <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/com/secoc/VerificationStatusContainer</TYPE-TREF>
+                    </VARIABLE-DATA-PROTOTYPE>
+                  </EVENTS>
+                </SERVICE-INTERFACE>
+                <SERVICE-INTERFACE>
+                  <SHORT-NAME>VerificationStatusConfigurationByDataId</SHORT-NAME>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ara_1</SHORT-NAME>
+                      <SYMBOL>ara</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>com_2</SHORT-NAME>
+                      <SYMBOL>com</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>secoc_3</SHORT-NAME>
+                      <SYMBOL>secoc</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <METHODS>
+                    <CLIENT-SERVER-OPERATION>
+                      <SHORT-NAME>VerifyStatusOverride</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE>
+                          <SHORT-NAME>dataID</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                        <ARGUMENT-DATA-PROTOTYPE>
+                          <SHORT-NAME>overrideStatus</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/com/secoc/OverrideStatus</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                        <ARGUMENT-DATA-PROTOTYPE>
+                          <SHORT-NAME>numberOfMessagesToOverride</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                  </METHODS>
+                </SERVICE-INTERFACE>
+                <SERVICE-INTERFACE>
+                  <SHORT-NAME>VerificationStatusConfigurationByFreshnessId</SHORT-NAME>
+                  <NAMESPACES>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>ara_1</SHORT-NAME>
+                      <SYMBOL>ara</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>com_2</SHORT-NAME>
+                      <SYMBOL>com</SYMBOL>
+                    </SYMBOL-PROPS>
+                    <SYMBOL-PROPS>
+                      <SHORT-NAME>secoc_3</SHORT-NAME>
+                      <SYMBOL>secoc</SYMBOL>
+                    </SYMBOL-PROPS>
+                  </NAMESPACES>
+                  <METHODS>
+                    <CLIENT-SERVER-OPERATION>
+                      <SHORT-NAME>VerifyStatusOverride</SHORT-NAME>
+                      <ARGUMENTS>
+                        <ARGUMENT-DATA-PROTOTYPE>
+                          <SHORT-NAME>freshnessID</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint16_t</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                        <ARGUMENT-DATA-PROTOTYPE>
+                          <SHORT-NAME>overrideStatus</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/ara/com/secoc/OverrideStatus</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                        <ARGUMENT-DATA-PROTOTYPE>
+                          <SHORT-NAME>numberOfMessagesToOverride</SHORT-NAME>
+                          <TYPE-TREF DEST="STD-CPP-IMPLEMENTATION-DATA-TYPE">/AUTOSAR/StdTypes/uint8_t</TYPE-TREF>
+                          <DIRECTION>IN</DIRECTION>
+                        </ARGUMENT-DATA-PROTOTYPE>
+                      </ARGUMENTS>
+                    </CLIENT-SERVER-OPERATION>
+                  </METHODS>
+                </SERVICE-INTERFACE>
+                <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+                  <SHORT-NAME>SecOCAppProvider</SHORT-NAME>
+                  <PORTS>
+                    <P-PORT-PROTOTYPE>
+                      <SHORT-NAME>pp_VerificationStatus</SHORT-NAME>
+                      <PORT-PROTOTYPE-PROPS>
+                        <R-PORT-PROTOTYPE-PROPS>
+                          <SEARCH-INTENTION>SEARCH-FOR-SPECIFIC-INSTANCE</SEARCH-INTENTION>
+                        </R-PORT-PROTOTYPE-PROPS>
+                      </PORT-PROTOTYPE-PROPS>
+                      <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatus</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE>
+                      <SHORT-NAME>pp_VerificationStatusConfigurationByDataId</SHORT-NAME>
+                      <PORT-PROTOTYPE-PROPS>
+                        <R-PORT-PROTOTYPE-PROPS>
+                          <SEARCH-INTENTION>SEARCH-FOR-SPECIFIC-INSTANCE</SEARCH-INTENTION>
+                        </R-PORT-PROTOTYPE-PROPS>
+                      </PORT-PROTOTYPE-PROPS>
+                      <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatusConfigurationByDataId</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                    <P-PORT-PROTOTYPE>
+                      <SHORT-NAME>pp_VerificationStatusConfigurationByFreshnessId</SHORT-NAME>
+                      <PORT-PROTOTYPE-PROPS>
+                        <R-PORT-PROTOTYPE-PROPS>
+                          <SEARCH-INTENTION>SEARCH-FOR-SPECIFIC-INSTANCE</SEARCH-INTENTION>
+                        </R-PORT-PROTOTYPE-PROPS>
+                      </PORT-PROTOTYPE-PROPS>
+                      <PROVIDED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatusConfigurationByFreshnessId</PROVIDED-INTERFACE-TREF>
+                    </P-PORT-PROTOTYPE>
+                  </PORTS>
+                </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+                <ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+                  <SHORT-NAME>SecOCAppRequired</SHORT-NAME>
+                  <PORTS>
+                    <R-PORT-PROTOTYPE>
+                      <SHORT-NAME>rp_VerificationStatus</SHORT-NAME>
+                      <PORT-PROTOTYPE-PROPS>
+                        <R-PORT-PROTOTYPE-PROPS>
+                          <SEARCH-INTENTION>SEARCH-FOR-SPECIFIC-INSTANCE</SEARCH-INTENTION>
+                        </R-PORT-PROTOTYPE-PROPS>
+                      </PORT-PROTOTYPE-PROPS>
+                      <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatus</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE>
+                      <SHORT-NAME>rp_VerificationStatusConfigurationByDataId</SHORT-NAME>
+                      <PORT-PROTOTYPE-PROPS>
+                        <R-PORT-PROTOTYPE-PROPS>
+                          <SEARCH-INTENTION>SEARCH-FOR-SPECIFIC-INSTANCE</SEARCH-INTENTION>
+                        </R-PORT-PROTOTYPE-PROPS>
+                      </PORT-PROTOTYPE-PROPS>
+                      <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatusConfigurationByDataId</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                    <R-PORT-PROTOTYPE>
+                      <SHORT-NAME>rp_VerificationStatusConfigurationByFreshnessId</SHORT-NAME>
+                      <PORT-PROTOTYPE-PROPS>
+                        <R-PORT-PROTOTYPE-PROPS>
+                          <SEARCH-INTENTION>SEARCH-FOR-SPECIFIC-INSTANCE</SEARCH-INTENTION>
+                        </R-PORT-PROTOTYPE-PROPS>
+                      </PORT-PROTOTYPE-PROPS>
+                      <REQUIRED-INTERFACE-TREF DEST="SERVICE-INTERFACE">/ara/com/secoc/VerificationStatusConfigurationByFreshnessId</REQUIRED-INTERFACE-TREF>
+                    </R-PORT-PROTOTYPE>
+                  </PORTS>
+                </ADAPTIVE-APPLICATION-SW-COMPONENT-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </AR-PACKAGES>
+        </AR-PACKAGE>
+      </AR-PACKAGES>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>
