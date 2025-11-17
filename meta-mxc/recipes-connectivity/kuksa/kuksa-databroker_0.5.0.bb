@@ -9,6 +9,7 @@ SRCREV = "30e5c13abc496d0b39aaa6c25acebb088b9902e3"
 SRC_URI += "git://github.com/eclipse-kuksa/kuksa-databroker.git;branch=release/0.5.0;protocol=https \
             file://kuksa-databroker.service \
             file://databroker.env \
+            file://config/vss_4.0.json \
             file://1-modify-build-options.patch;patchdir=${WORKDIR}/cargo_home/bitbake/protobuf-src-1.1.0+21.5 \
            "
 
@@ -29,6 +30,8 @@ do_install:append() {
     install -d ${D}${sysconfdir}/kuksa
     install -m 0644 ${WORKDIR}/databroker.env ${D}${sysconfdir}/kuksa/databroker.env
 
+    install -m 0644 ${WORKDIR}/config/vss_4.0.json ${D}${sysconfdir}/kuksa/vss_4.0.json
+
     install -d ${D}${systemd_system_unitdir}
     install -m 0644 ${WORKDIR}/kuksa-databroker.service ${D}${systemd_system_unitdir}/kuksa-databroker.service
 }
@@ -40,6 +43,7 @@ FILES:${PN} += " \
     ${bindir}/databroker-cli \
     ${systemd_system_unitdir}/kuksa-databroker.service \
     ${sysconfdir}/kuksa/databroker.env \
+    ${sysconfdir}/kuksa/vss_4.0.json \
 "
 
 INSANE_SKIP:${PN} += "already-stripped"
