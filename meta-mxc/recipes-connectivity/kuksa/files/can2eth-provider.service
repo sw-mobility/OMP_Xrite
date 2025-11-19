@@ -1,0 +1,13 @@
+[Unit]
+Description=Can2Eth Provider
+After=network.target
+
+[Service]
+Environment="LOG_LEVEL=debug"
+ExecStart=python3 /usr/local/bin/can2eth-provider.py --mapping-file /etc/kuksa/vss_signal_mapping.csv --dbc-file /etc/kuksa/MXC_CAN.dbc --vss /etc/kuksa/vss_4.0.json
+Restart=always
+RestartSec=2
+User=root
+
+[Install]
+WantedBy=multi-user.target
