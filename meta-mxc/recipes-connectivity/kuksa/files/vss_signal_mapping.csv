@@ -1,0 +1,6 @@
+TYPE,VSS,CAN
+can2vss,Vehicle.Speed,CLU_DisSpdVal_KPH
+can2vss,Vehicle.Powertrain.CombustionEngine.Speed,CLU_EngineRPM
+vss2can,Vehicle.Chassis.Brake.PedalPosition,IEB_StrkDpthPcVal
+vss2can,Vehicle.Chassis.Accelerator.PedalPosition,IEB_AccPedDepVal
+vss2can,Vehicle.Chassis.SteeringWheel.Angle,SAS_AnglVal
