@@ -1,0 +1,21 @@
+diff a/build.rs b/build.rs
+--- a/build.rs
++++ b/build.rs
+@@ -26,4 +26,12 @@ fn main() { 
+-    autotools::Config::new("protobuf")
+-        .disable("maintainer-mode", None)
+-        .out_dir(&install_dir)
+-        .build();
++    let host_arch = env::var("BUILD_ARCH").unwrap_or_else(|_| "x86_64".to_string());
++    let host_triple = format!("{}-unknown-linux-gnu", host_arch);
++    let target_cc = env::var("BUILD_CC").expect("TARGET_CC not set");
++    let target_cxx = env::var("BUILD_CXX").expect("TARGET_CXX not set");
++    autotools::Config::new("protobuf")
++        .disable("maintainer-mode", None)
++        .config_option("host", Some(&host_triple))
++        .config_option("build", Some(&host_triple))
++        .env("CC", &target_cc)
++        .env("CXX", &target_cxx)
++        .out_dir(&install_dir)
++        .build();
+ }
