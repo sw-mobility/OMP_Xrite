@@ -11,8 +11,6 @@ SRC_URI += "\
     ${@bb.utils.contains('DISTRO_FEATURES', 'xen', 'file://xen.cfg', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'xen', 'file://xen_mxc.cfg', '', d)} \
     ${@bb.utils.contains('DISTRO_FEATURES', 'xen', 'file://xennat.cfg', '', d)} \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'xen', 'file://mxc_xen_add_interrupt_router_ranges.patch', '', d)} \
-    ${@bb.utils.contains('DISTRO_FEATURES', 'xen', 'file://mxc_xen_update_pcie_interrupt_cells.patch', '', d)} \
-    "
-
+    ${@bb.utils.contains('DISTRO_FEATURES', 'xen', 'file://xen-kernel-k3-j721e.dtsi.patch', '', d)} \
+"
 
