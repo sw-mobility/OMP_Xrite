@@ -1,3 +1,5 @@
+ROOT_HOME="/home/root"
+
 do_install:append() {
     if ${@bb.utils.contains('DISTRO_FEATURES','xen','true','false',d)}; then
         rm -rf ${D}${sysconfdir}/systemd/network/10-eth.network
