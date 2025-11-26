@@ -1,6 +1,7 @@
 # OMP_Xrite
 Yocto-based Platform SW. <br>
 
+Target H/W for this repository is Texas Instruments <b>TDA4VM</b> based custom boards. <br>
 To run this layer, the yocto recipes from TI are required. Please follow below instructions to apply this layer into TI Yocto SDK.
 
 To download source files provided by TI, run:
@@ -30,12 +31,11 @@ To download TI edge AI SDK, run:
 $ cd yocto-build/sources
 $ git clone https://git.ti.com/git/edgeai/meta-edgeai.git -b 10.01.00.06
 ```
+
 After download meta-edgeai, should be modify u-boot and kernel file: <br>
-TARGET FILE : meta-edgeai/recipes-bsp/u-boot/u-boot-ti-staging_%.bbappend <br>
--> Erase or comment out all contents of the file.
 
-TARGET FILE : meta-edgeai/recipes-kernel/linux/linux-ti-staging_%.bbappend <br>
--> Erase or comment out all contents of the file.
-
-TARGET FILE : meta-edgeai/recipes-kernel/linux/linux-ti-staging-rt_%.bbappend <br>
--> Erase or comment out all contents of the file.
+1. Erase or comment out all contents of the file.
+    * Target files
+        *  meta-edgeai/recipes-bsp/u-boot/u-boot-ti-staging_%.bbappend
+        *  meta-edgeai/recipes-kernel/linux/linux-ti-staging_%.bbappend
+        *  meta-edgeai/recipes-kernel/linux/linux-ti-staging-rt_%.bbappend
