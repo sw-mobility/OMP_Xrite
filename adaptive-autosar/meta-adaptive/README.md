@@ -1,5 +1,7 @@
 # Adaptive AUTOSAR Application Yocto Build
 This project describes how to build an Adaptive Application using Yocto and include the ETAS ISOLAR-VRTE SDK and build artifacts into a Linux image to generate the final image.
+- Target Board : S32G RDB2
+- Adaptive AUTOSAR Platform : ETAS ISOLAR-VRTE/RTA-VRTE
 
 
 ## 01. Recipe Structure
